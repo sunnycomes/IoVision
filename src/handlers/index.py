@@ -12,7 +12,7 @@ from src.common.markdown_parser import BasicParser
 class IndexHandler(RequestHandler):
     '''
     This handler is used to deal with the requests for index page.
-    Visiting url is http://localhost:6666/
+    Visiting url is http://localhost:9999/
     '''
     def get(self):
         posts = []

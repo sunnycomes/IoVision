@@ -1,6 +1,6 @@
 handlers = []
 
-modules = ["index"]
+modules = ["index", "post"]
 
 for module in modules:
     handler = __import__("src.handlers." + module, fromlist="src.handlers")

@@ -55,7 +55,7 @@ class BasicParser:
         lines = BasicParser._readPost(post_path)
         
         sections = {}
-        sections["post_name"] = post_name
+        sections["post_name"] = post_name[0:-9]
         sections["title"] = BasicParser._findTitle(lines)
         sections["date"] = BasicParser._findDate(lines)
         

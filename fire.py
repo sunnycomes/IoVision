@@ -29,7 +29,7 @@ def setPort(port):
     define("port", default=port, help="the port tornado listen to")
     
 def setSourceDir(dirx):
-    define("source_dir", default=os.getcwd(), help="Source files directory")
+    define("source_dir", default=os.getcwd() + os.sep + dirx, help="Source files directory")
     
 def setBuildDir(dirx):
     define("build_dir", default=options.source_dir + os.sep + dirx, help="Built files directory")

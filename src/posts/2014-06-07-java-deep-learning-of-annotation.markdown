@@ -11,6 +11,7 @@ tags: Java
 
 原文中提到“**自定义注解是以@interface为标志的**”，那么，“注释”到底是不是一个interface呢？答案可以从[官方文档](http://docs.oracle.com/javase/tutorial/java/annotations/declaring.html)中找到，“`Annotation types are a form of interface`”，如是写道。
 
+<!-- more -->
 
 原文中定义了一个Constraints的Annotation，当其他Annotation引用它时，却有两种不同的用法，我从原文中复制了这样一段代码
 
@@ -38,5 +39,3 @@ tags: Java
 再啰嗦一句，在Annotation里面，有一个接口很少抛头露面，但有重要到不得不提的地步，它就是`java.lang.annotation.Annotation`，默认的，Override，Deprecated等annotation类型都继承于它，跟java.lang.Object类似。更多详细资料见官网[Interface Annotation](http://docs.oracle.com/javase/7/docs/api/java/lang/annotation/Annotation.html). 值得注意的是，你要是自己写个接口Intf，实现`java.lang.annotation.Annotation`，并不能使Intf成为`java.lang.annotation.Annotation`类型。
 
 最后，可以尝试做下官网提供的小测验，巩固下知识，[地址](http://docs.oracle.com/javase/tutorial/java/annotations/QandE/questions.html)
-
-<!-- more -->

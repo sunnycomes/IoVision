@@ -140,11 +140,14 @@ article pre {
 	padding: 20px 37px;
 	white-space: pre;
 	word-wrap: normal;
-	box-shadow: inset 0 0 1px rgb(50,50,50);
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
 	background: #f8f8f8;
+}
+
+article>.entry-content>pre {
+	box-shadow: inset 0 0 1px rgb(50,50,50);
 }
 
 article code {

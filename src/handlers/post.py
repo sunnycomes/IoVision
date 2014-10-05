@@ -12,7 +12,7 @@ from src.common.markdown_parser import BasicParser
 class PostHandler(RequestHandler):
     '''
     This handler is used to deal with the requests for single post page.
-    Visiting url is http://localhost:6666/post/xxx
+    Visiting url is http://localhost:6666/post?name=post_name
     '''
     def get(self):
         post_name = self.get_arguments("name", True)

@@ -17,6 +17,7 @@ class IndexHandler(RequestHandler):
     def get(self):
         posts = []
         post_name_list = os.listdir(options.posts_dir)
+        post_name_list.sort(reverse=True)
         
         for post_name in post_name_list:
             post = BasicParser.parse(options.posts_dir, post_name)

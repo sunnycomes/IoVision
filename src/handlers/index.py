@@ -21,6 +21,7 @@ class IndexHandler(RequestHandler):
         
         for post_name in post_name_list:
             post = BasicParser.parse(options.posts_dir, post_name)
+            post["content"] = BasicParser.getBriefContent(post["content"])
             posts.append(post)
         
         theme_file_path = options.theme_path + os.sep + "index.html"

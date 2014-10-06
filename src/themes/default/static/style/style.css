@@ -24,6 +24,24 @@ a {
 	margin-left: 220px;
 }
 
+#header_index {
+	position: fixed;
+	width: 180px;
+	margin-right: 40px;
+	margin-top: 30px;
+}
+
+.site-nav {
+	margin: 0px 0px 15px;
+	font-size: 14px;
+	text-align: right;
+	font-weight: normal;
+}
+
+.site-nav a{
+	color: rgb(100,100,100);
+}
+
 #blog_index {
 	padding-top: 20px;
 	width: 90%;
@@ -37,6 +55,11 @@ article {
 	margin: 0 0 1.625em;
 	padding: 0 0 1.625em;
 	box-shadow:0 0 10px rgba(200,200,200,0.8);
+}
+
+.article_wrapper {
+	padding-top:20px;
+	width: 90%;
 }
 
 .entry-header {

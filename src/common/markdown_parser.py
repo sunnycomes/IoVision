@@ -70,14 +70,15 @@ class BasicParser:
         end = content.index("<!-- more -->")
         return content[0:end]
 
-def getAllParsedPosts():
+def getAllParsedPosts(brief=True):
         posts = []
         post_name_list = os.listdir(options.posts_dir)
         post_name_list.sort(reverse=True)
         
         for post_name in post_name_list:
             post = BasicParser.parse(options.posts_dir, post_name)
-            post["content"] = BasicParser.getBriefContent(post["content"])
+            if brief:
+                post["content"] = BasicParser.getBriefContent(post["content"])
             posts.append(post)
             
         return posts

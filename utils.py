@@ -3,7 +3,7 @@ Created on Oct 6, 2014
 
 @author: sunnycomes
 '''
-import os
+import os, sys
 import ConfigParser
 from tornado.options import define, options
 
@@ -66,3 +66,10 @@ def loadConfig():
     setTemplatesDir(config.get("sect_dir_tree", "templates_dir"))
     setCurrentTemplateDir(config.get("sect_basic", "template_name"))
     setStaticResourceDir(config.get("sect_dir_tree", "static_resource_dir"))    
+       
+def initSourcePath():
+    source_path = os.path.dirname(os.path.abspath(__file__))
+    # change current working directory to source_path for relative paths to work correctly
+    os.chdir(source_path)
+    if os.access(source_path, os.F_OK):
+        sys.path.append(source_path)

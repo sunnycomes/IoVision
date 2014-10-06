@@ -86,7 +86,6 @@ def initServer():
     server.listen(options.port)
 
 if __name__ == "__main__":
-    #tornado.options.parse_command_line()
     initSourcePath()
     loadConfig()
     initServer()

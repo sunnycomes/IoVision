@@ -37,11 +37,8 @@
 				</div>
 			</div>
 			
-			<footer class="footer">
-				<div class="footer_powered_by">
-								Powered by <a href="{{ params["url"] }}">{{ params["author"] }}</a>
-				</div>
-			</footer>
+			{% include "footer.html" %}
+			
 		</div>
 		
 		{% include "utils/github_fork.html" %}

@@ -30,7 +30,7 @@ class IndexHandler(RequestHandler):
         params["title"] = options.title
         params["github_link"] = options.github_link
         
-        theme_file_path = options.theme_path + os.sep + "index.html"
-        self.render(theme_file_path, posts = posts, params = params)
+        template_file_path = options.current_template_dir + os.sep + "index.html"
+        self.render(template_file_path, posts = posts, params = params)
 
 handler = url(r"/", IndexHandler)     

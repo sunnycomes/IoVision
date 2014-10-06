@@ -26,7 +26,7 @@ class PostHandler(RequestHandler):
         params["github_link"] = options.github_link
         params["disqus_shortname"] = options.disqus_shortname
         
-        theme_file_path = options.theme_path + os.sep + "post.html"
-        self.render(theme_file_path, post = post, params = params)
+        template_file_path = options.current_template_dir + os.sep + "post.html"
+        self.render(template_file_path, post = post, params = params)
 
 handler = url(r"/post/*", PostHandler)

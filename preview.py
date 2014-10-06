@@ -46,14 +46,14 @@ def setPostDir(dirx):
 def setAboutDir(dirx):
     define("about_dir", default=options.source_dir + os.sep + dirx, help="About files directory")
        
-def setThemeDir(dirx):
-    define("themes_dir", default=options.source_dir + os.sep + dirx, help="Theme directory, maybe not only one kind")
+def setTemplatesDir(dirx):
+    define("templates_dir", default=options.source_dir + os.sep + dirx, help="Templates directory, maybe not only one")
 
-def setThemePath(name):
-    define("theme_path", default=options.themes_dir + os.sep + name, help="Current theme path")
+def setCurrentTemplateDir(name):
+    define("current_template_dir", default=options.templates_dir + os.sep + name, help="Current template path")
 
 def setStaticResourceDir(dirx):    
-    define("static_resource_dir", default=options.theme_path + os.sep + dirx, help="Static resource directory")
+    define("static_resource_dir", default=options.current_template_dir + os.sep + dirx, help="Static resource directory")
     
 def getConfigFile():     
     config = ConfigParser.RawConfigParser()
@@ -72,8 +72,8 @@ def loadConfig():
     setBuildDir(config.get("sect_dir_tree", "build_dir"))
     setPostDir(config.get("sect_dir_tree", "posts_dir"))
     setAboutDir(config.get("sect_dir_tree", "about_dir"))
-    setThemeDir(config.get("sect_dir_tree", "themes_dir"))
-    setThemePath(config.get("sect_basic", "theme_name"))
+    setTemplatesDir(config.get("sect_dir_tree", "templates_dir"))
+    setCurrentTemplateDir(config.get("sect_basic", "template_name"))
     setStaticResourceDir(config.get("sect_dir_tree", "static_resource_dir"))    
     
 def initServer():

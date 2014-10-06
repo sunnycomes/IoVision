@@ -19,7 +19,7 @@ footer: true
 
 * ####Photo
 
-想看就点 ***[here](/img/me.png)***，大众脸，平凡人，不平凡的心.
+想看就点 ***[here](/static/img/me.png)***，大众脸，平凡人，不平凡的心.
 
 * ####Wallet
 

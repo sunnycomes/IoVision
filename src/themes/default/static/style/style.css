@@ -143,11 +143,11 @@ article blockquote {
 	padding: 5px 0 5px 40px;
 	border-left: 5px #7d7d7d solid;
 }
-article ul, .article ol {
-	margin: 10px 0 10px 20px;
+article ul, article ol {
+	margin: 10px 0 24px 12px;
 }
 article li {
-	margin-bottom: 5px;
+	margin: 5px;
 }
 article img {
 	text-align: center;

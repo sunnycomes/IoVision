@@ -29,7 +29,7 @@ def setSourceDir(dirx):
     define("source_dir", default=os.getcwd() + os.sep + dirx, help="Source files directory")
     
 def setBuildDir(dirx):
-    define("build_dir", default=options.source_dir + os.sep + dirx, help="Built files directory")
+    define("build_dir", default=os.getcwd() + os.sep + dirx, help="Built files directory")
     
 def setPostDir(dirx):
     define("posts_dir", default=options.source_dir + os.sep + dirx, help="Post files directory")

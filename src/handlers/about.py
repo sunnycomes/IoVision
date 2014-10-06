@@ -26,7 +26,7 @@ class AboutHandler(RequestHandler):
         params["github_link"] = options.github_link
         params["disqus_shortname"] = options.disqus_shortname
         
-        template_file_path = options.current_template_dir + os.sep + "about.html"
-        self.render(template_file_path, post = post, params = params)
+        template_file_name = "about.html"
+        self.render(template_file_name, post = post, params = params)
 
 handler = url(r"/about", AboutHandler)

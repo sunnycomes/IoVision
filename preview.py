@@ -80,6 +80,7 @@ def initServer():
     settings = dict(
                     debug = True,
                     static_path=options.static_resource_dir,
+                    template_path=options.current_template_dir
     )
     server = Application(handlers, **settings)
     #server.settings = settings # Never use this.    

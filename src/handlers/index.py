@@ -25,6 +25,6 @@ class IndexHandler(RequestHandler):
             posts.append(post)
         
         theme_file_path = options.theme_path + os.sep + "index.html"
-        self.render(theme_file_path, author=options.author, url=options.url, title=options.title, posts = posts)
+        self.render(theme_file_path, author=options.author, url=options.url, title=options.title, github_link=options.github_link, posts = posts)
 
 handler = url(r"/", IndexHandler)     

@@ -18,7 +18,8 @@ class AboutHandler(RequestHandler):
         full_name = "about.markdown"
         post = BasicParser.parse(options.about_dir, full_name)
         post["title"] = options.author
+
         theme_file_path = options.theme_path + os.sep + "about.html"
-        self.render(theme_file_path, author=options.author, url=options.url, title=options.title, post = post)
+        self.render(theme_file_path, author=options.author, url=options.url, title=options.title, github_link=options.github_link, post = post)
 
 handler = url(r"/about", AboutHandler)

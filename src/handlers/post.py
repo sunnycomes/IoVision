@@ -18,8 +18,8 @@ class PostHandler(RequestHandler):
         post_name = self.get_arguments("name", True)
         full_name = post_name[0] + ".markdown"
         post = BasicParser.parse(options.posts_dir, full_name)
-        
+        post["github_link"] = options.github_link
         theme_file_path = options.theme_path + os.sep + "post.html"
-        self.render(theme_file_path, author=options.author, url=options.url, title=options.title, post = post)
+        self.render(theme_file_path, author=options.author, url=options.url, title=options.title, github_link=options.github_link, post = post)
 
 handler = url(r"/post/*", PostHandler)

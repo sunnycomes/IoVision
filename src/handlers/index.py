@@ -24,7 +24,13 @@ class IndexHandler(RequestHandler):
             post["content"] = BasicParser.getBriefContent(post["content"])
             posts.append(post)
         
+        params = {}
+        params["author"] = options.author
+        params["url"] = options.url
+        params["title"] = options.title
+        params["github_link"] = options.github_link
+        
         theme_file_path = options.theme_path + os.sep + "index.html"
-        self.render(theme_file_path, author=options.author, url=options.url, title=options.title, github_link=options.github_link, posts = posts)
+        self.render(theme_file_path, posts = posts, params = params)
 
 handler = url(r"/", IndexHandler)     

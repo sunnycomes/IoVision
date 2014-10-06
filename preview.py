@@ -74,6 +74,7 @@ def loadConfig():
     
 def initServer():
     settings = dict(
+                    debug = True,
                     static_path=options.static_resource_dir,
     )
     server = Application(handlers, **settings)
@@ -81,6 +82,7 @@ def initServer():
     server.listen(options.port)
 
 if __name__ == "__main__":
+    #tornado.options.parse_command_line()
     initSourcePath()
     loadConfig()
     initServer()

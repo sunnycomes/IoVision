@@ -15,8 +15,9 @@ class PostHandler(RequestHandler):
     Visiting url is http://localhost:6666/post?name=post_name
     '''
     def get(self):
-        post_name = self.get_arguments("name", True)
-        full_name = post_name[0] + ".markdown"
+        uri = self.request.uri
+        post_name = uri.split("/")[2]
+        full_name = post_name.split(".")[0] + ".markdown"
         post = BasicParser.parse(options.posts_dir, full_name)
         
         params = {}
@@ -29,4 +30,5 @@ class PostHandler(RequestHandler):
         template_file_name = "post.html"
         self.render(template_file_name, post = post, params = params)
 
-handler = url(r"/post/*", PostHandler)
+
+handler = url(r"/post/.*", PostHandler)

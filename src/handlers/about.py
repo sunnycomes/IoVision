@@ -24,6 +24,7 @@ class AboutHandler(RequestHandler):
         params["url"] = options.url
         params["title"] = options.title
         params["github_link"] = options.github_link
+        params["disqus_shortname"] = options.disqus_shortname
         
         theme_file_path = options.theme_path + os.sep + "about.html"
         self.render(theme_file_path, post = post, params = params)

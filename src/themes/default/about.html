@@ -1,0 +1,40 @@
+{% autoescape None %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>{{ title }}</title>
+		<link rel="favicon" href="{{ static_url("img/favicon.ico") }}"/>
+		<link rel="stylesheet" href="{{ static_url("style/style.css") }}" type="text/css" media="screen">
+	</head>
+	<body>
+		<div id="content">
+			<header id="header_index">
+				<hgroup>
+					<h2 class="site-nav"><a href="/">首页</a></h2>
+		            <h2 class="site-nav"><a href="/about">About</a></h2>
+				</hgroup>
+			</header>
+			<div id="main">
+				<div class="article_wrapper">
+					<article>
+						<div class="entry-header">
+							<h1 class="entry-title">{{ post["title"] }}</h1>
+						</div>
+						
+						<div class="entry-content">
+							{{ post["content"] }}
+						</div>
+						
+					</article>
+				</div>
+			</div>
+			
+			<footer class="footer">
+				<div class="footer_powered_by">
+								Powered by <a href="{{ url }}">{{ author }}</a>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

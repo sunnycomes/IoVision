@@ -4,10 +4,10 @@ Created on Oct 4, 2014
 @author: sunnycomes
 '''
 
-import os
 from tornado.options import options
 from tornado.web import url, RequestHandler
 from src.common.markdown_parser import BasicParser
+from src.common.settings import getSiteInfo
 
 class AboutHandler(RequestHandler):
     '''
@@ -19,12 +19,7 @@ class AboutHandler(RequestHandler):
         post = BasicParser.parse(options.about_dir, full_name)
         post["title"] = options.author
 
-        params = {}
-        params["author"] = options.author
-        params["url"] = options.url
-        params["title"] = options.title
-        params["github_link"] = options.github_link
-        params["disqus_shortname"] = options.disqus_shortname
+        params = getSiteInfo()
         
         template_file_name = "about.html"
         self.render(template_file_name, post = post, params = params)

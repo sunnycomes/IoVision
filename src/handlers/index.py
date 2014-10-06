@@ -8,6 +8,7 @@ import os
 from tornado.options import options
 from tornado.web import url, RequestHandler
 from src.common.markdown_parser import BasicParser
+from src.common.settings import getSiteInfo
 
 class IndexHandler(RequestHandler):
     '''
@@ -24,11 +25,7 @@ class IndexHandler(RequestHandler):
             post["content"] = BasicParser.getBriefContent(post["content"])
             posts.append(post)
         
-        params = {}
-        params["author"] = options.author
-        params["url"] = options.url
-        params["title"] = options.title
-        params["github_link"] = options.github_link
+        params = getSiteInfo()
         
         template_file_name = "index.html"
         self.render(template_file_name, posts = posts, params = params)

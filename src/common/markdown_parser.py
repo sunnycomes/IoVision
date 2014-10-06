@@ -6,6 +6,7 @@ Created on Oct 4, 2014
 import os
 import codecs
 import markdown
+from tornado.options import options
 
 class BasicParser:
     '''
@@ -68,3 +69,15 @@ class BasicParser:
     def getBriefContent(content):
         end = content.index("<!-- more -->")
         return content[0:end]
+
+def getAllParsedPosts():
+        posts = []
+        post_name_list = os.listdir(options.posts_dir)
+        post_name_list.sort(reverse=True)
+        
+        for post_name in post_name_list:
+            post = BasicParser.parse(options.posts_dir, post_name)
+            post["content"] = BasicParser.getBriefContent(post["content"])
+            posts.append(post)
+            
+        return posts

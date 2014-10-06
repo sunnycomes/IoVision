@@ -35,8 +35,11 @@ def setBuildDir(dirx):
     define("build_dir", default=options.source_dir + os.sep + dirx, help="Built files directory")
     
 def setPostDir(dirx):
-    define("posts_dir", default=options.source_dir + os.sep + dirx, help="post files directory")
-     
+    define("posts_dir", default=options.source_dir + os.sep + dirx, help="Post files directory")
+
+def setAboutDir(dirx):
+    define("about_dir", default=options.source_dir + os.sep + dirx, help="About files directory")
+       
 def setThemeDir(dirx):
     define("themes_dir", default=options.source_dir + os.sep + dirx, help="Theme directory, maybe not only one kind")
 
@@ -60,6 +63,7 @@ def loadConfig():
     setSourceDir(config.get("sect_dir_tree", "source_dir"))
     setBuildDir(config.get("sect_dir_tree", "build_dir"))
     setPostDir(config.get("sect_dir_tree", "posts_dir"))
+    setAboutDir(config.get("sect_dir_tree", "about_dir"))
     setThemeDir(config.get("sect_dir_tree", "themes_dir"))
     setThemePath(config.get("sect_basic", "theme_name"))
     setStaticResourceDir(config.get("sect_dir_tree", "static_resource_dir"))    

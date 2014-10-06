@@ -20,8 +20,8 @@ footer: true
 想看就点 ***[here](/static/img/me.png)***，大众脸，平凡人，不平凡的心.
 
 ####Wallet
-<a href="https://blockchain.info/address/17L2bPF8WRhu81UBZnBsQfiopdnDFKFv5W" target="_blank">比特币钱包：17L2bPF8WRhu81UBZnBsQfiopdnDFKFv5W</a>  
-<a href="https://dogechain.info/address/DNFR3FWD82DP51LWVF5NzWaKRZSAQ317iy" target="_blank">狗狗币钱包：DNFR3FWD82DP51LWVF5NzWaKRZSAQ317iy</a>  
+比特币钱包(Bitcoin)：<a href="https://blockchain.info/address/17L2bPF8WRhu81UBZnBsQfiopdnDFKFv5W" target="_blank">17L2bPF8WRhu81UBZnBsQfiopdnDFKFv5W</a>  
+狗狗币钱包(DogeCoin)：<a href="https://dogechain.info/address/DNFR3FWD82DP51LWVF5NzWaKRZSAQ317iy" target="_blank">DNFR3FWD82DP51LWVF5NzWaKRZSAQ317iy</a>  
 这两个是我的电子钱包，如果你也玩这个，不妨捐我几个呗，当然，如果你想要，我也是可以送你几个的.
 
 ##Works

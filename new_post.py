@@ -12,8 +12,13 @@ from utils import initSourcePath, loadConfig
 
 def formatPostTitle(tt):
     tt = tt.lower()
+    words = tt.split(" ")
+    print words
+    for word in words[:]: # Do not use 'for word in words:'
+        if word == "":
+            words.remove("")
     
-    return tt.replace(" ", "-")
+    return  '-'.join(words)
     
 def getPostInfo():
     post = {}

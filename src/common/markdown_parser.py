@@ -67,7 +67,10 @@ class BasicParser:
     
     @staticmethod
     def getBriefContent(content):
-        end = content.index("<!-- more -->")
+        end = -1
+        if content.find("<!-- more -->"):
+            end = content.index("<!-- more -->")
+            
         return content[0:end]
 
 def getAllParsedPosts(brief=True):

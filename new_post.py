@@ -42,7 +42,9 @@ def writeToFile(path, post):
     filex.write(content)
     
 if __name__ == '__main__':
-    initRootPath()
+    root_path = os.path.dirname(os.path.abspath(__file__))
+    initRootPath(root_path)
+    
     loadConfig()
     
     post = getPostInfo()

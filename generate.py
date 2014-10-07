@@ -64,7 +64,9 @@ def generateAbout():
     about_file.write(html)
     
 if __name__ == '__main__':
-    initRootPath()
+    root_path = os.path.dirname(os.path.abspath(__file__))
+    initRootPath(root_path)
+    
     loadConfig()
     
     generateIndex()

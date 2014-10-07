@@ -67,9 +67,8 @@ def loadConfig():
     setCurrentTemplateDir(config.get("sect_basic", "template_name"))
     setStaticResourceDir(config.get("sect_dir_tree", "static_resource_dir"))    
        
-def initRootPath():
-    source_path = os.path.dirname(os.path.abspath(__file__))
-    # change current working directory to source_path for relative paths to work correctly
-    os.chdir(source_path)
-    if os.access(source_path, os.F_OK):
-        sys.path.append(source_path)
+def initRootPath(root_path):
+    # change current working directory to root_path for relative paths to work correctly
+    os.chdir(root_path)
+    if os.access(root_path, os.F_OK):
+        sys.path.append(root_path)

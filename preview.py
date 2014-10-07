@@ -1,5 +1,6 @@
 #!/usr/bin/env PYTHON
 
+import os
 from tornado.web import Application
 from tornado.ioloop import IOLoop
 from src.handlers import handlers
@@ -18,7 +19,9 @@ def initServer():
     server.listen(options.port)
 
 if __name__ == "__main__":
-    initRootPath()
+    root_path = os.path.dirname(os.path.abspath(__file__))
+    initRootPath(root_path)
+    
     loadConfig()
     initServer()
     IOLoop.current().instance().start()

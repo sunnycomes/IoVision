@@ -53,7 +53,7 @@ if __name__ == '__main__':
     config = getConfigFile(config_file_path)
     define("github_pages_repo", default = config.get("sect_basic", "github_pages_repo"), help="github pages repo url")
 
-    #generate()
+    generate()
     
     deploy()
     

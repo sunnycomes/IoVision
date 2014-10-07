@@ -67,7 +67,8 @@ if __name__ == '__main__':
     root_path = os.path.dirname(os.path.abspath(__file__))
     initRootPath(root_path)
     
-    loadConfig()
+    config_file_path = root_path + os.sep + "setup.cfg"
+    loadConfig(config_file_path)
     
     generateIndex()
     copyStaticFiles()

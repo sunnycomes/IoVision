@@ -5,7 +5,7 @@ from tornado.ioloop import IOLoop
 from src.handlers import handlers
 from tornado.options import options
 
-from utils import initSourcePath, loadConfig
+from utils import initRootPath, loadConfig
     
 def initServer():
     settings = dict(
@@ -18,7 +18,7 @@ def initServer():
     server.listen(options.port)
 
 if __name__ == "__main__":
-    initSourcePath()
+    initRootPath()
     loadConfig()
     initServer()
     IOLoop.current().instance().start()

@@ -9,7 +9,7 @@ Created on Oct 6, 2014
 import os
 import shutil
 from tornado.options import options
-from utils import initSourcePath, loadConfig
+from utils import initRootPath, loadConfig
 from src.common.template_parser import TemplateParser
 from src.common.settings import getSiteInfo
 from src.common import markdown_parser
@@ -64,7 +64,7 @@ def generateAbout():
     about_file.write(html)
     
 if __name__ == '__main__':
-    initSourcePath()
+    initRootPath()
     loadConfig()
     
     generateIndex()

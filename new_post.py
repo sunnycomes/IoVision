@@ -8,12 +8,12 @@ Created on Oct 6, 2014
 
 import os,time
 from tornado.options import options
-from utils import initSourcePath, loadConfig
+from utils import initRootPath, loadConfig
 
 def formatPostTitle(tt):
     tt = tt.lower()
+    
     words = tt.split(" ")
-    print words
     for word in words[:]: # Do not use 'for word in words:'
         if word == "":
             words.remove("")
@@ -42,7 +42,7 @@ def writeToFile(path, post):
     filex.write(content)
     
 if __name__ == '__main__':
-    initSourcePath()
+    initRootPath()
     loadConfig()
     
     post = getPostInfo()

@@ -62,7 +62,13 @@ def generateAbout():
     html = TemplateParser.parse(options.current_template_dir, "about.html", post=post, params=params)
     about_file = open(dest + os.sep + "index.html", "wb")
     about_file.write(html)
-    
+
+def generate():    
+    generateIndex()
+    copyStaticFiles()
+    generatePosts()
+    generateAbout()
+        
 if __name__ == '__main__':
     root_path = os.path.dirname(os.path.abspath(__file__))
     initRootPath(root_path)
@@ -70,8 +76,5 @@ if __name__ == '__main__':
     config_file_path = root_path + os.sep + "setup.cfg"
     loadConfig(config_file_path)
     
-    generateIndex()
-    copyStaticFiles()
-    generatePosts()
-    generateAbout()
+    generate()
     

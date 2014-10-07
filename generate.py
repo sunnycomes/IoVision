@@ -57,6 +57,7 @@ def generateAbout():
     dest = options.build_dir + os.sep + "about"
     mkdir(dest)
     post = BasicParser.parse(options.about_dir, "about.markdown")
+    post["title"] = options.author
     params = getSiteInfo()
     
     html = TemplateParser.parse(options.current_template_dir, "about.html", post=post, params=params)

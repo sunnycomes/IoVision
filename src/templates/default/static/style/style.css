@@ -1,7 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
-	vertical-align: baseline;
+	vertical-align: baseline; 
 }
 
 body {
@@ -142,9 +142,9 @@ article h6 {
 	font-size: 1.0em;
 }
 article blockquote {
-	margin: 10px 0;
-	padding: 5px 0 5px 40px;
-	border-left: 5px #7d7d7d solid;
+	margin: 1em 3em 1em 0em;
+	padding: 1.5em 1em 0.2em 2em;
+	border-left: 5px solid #fce27c;
 }
 article ul, article ol {
 	margin: 10px 0 24px 12px;

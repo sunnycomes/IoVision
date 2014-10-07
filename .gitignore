@@ -56,3 +56,7 @@ target/
 # any markdown files
 *.markdown
 !about.markdown
+
+# any temporary files
+*.css~
+

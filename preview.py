@@ -6,7 +6,7 @@ from tornado.ioloop import IOLoop
 from src.handlers import handlers
 from tornado.options import options
 
-from utils import initRootPath, loadConfig
+from src.common.utils import initRootPath, loadConfig
     
 def initServer():
     settings = dict(

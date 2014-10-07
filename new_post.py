@@ -8,7 +8,7 @@ Created on Oct 6, 2014
 
 import os,time
 from tornado.options import options
-from utils import initRootPath, loadConfig
+from src.common.utils import initRootPath, loadConfig
 
 def formatPostTitle(tt):
     tt = tt.lower()

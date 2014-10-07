@@ -45,7 +45,7 @@ def copyStaticFiles():
 def generatePosts():
     dest = options.build_dir + os.sep + "post"
     mkdir(dest)
-    posts = markdown_parser.getAllParsedPosts(brief=True)
+    posts = markdown_parser.getAllParsedPosts(brief=False)
     params = getSiteInfo()
     
     for post in posts:

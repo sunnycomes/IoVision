@@ -23,7 +23,8 @@ class BasicParser:
     @staticmethod
     def _findTitle(lines):
         for line in lines:
-            if line.find("title: ") == 0:
+            if line.find("title: ") > -1:
+                line = line.strip()
                 return line[7:-1]
             
         return ""
@@ -31,7 +32,8 @@ class BasicParser:
     @staticmethod
     def _findDate(lines):
         for line in lines:
-            if line.find("date: ") == 0 :
+            if line.find("date: ") > -1:
+                line = line.strip()
                 return line[6:-1]
         
         return ""
@@ -42,7 +44,7 @@ class BasicParser:
         startAt = 1
         for line in lines[1:]:
             startAt += 1
-            if line.find("---") == 0:
+            if line.find("---") > -1:
                 break;
         
         for line in lines[startAt:]:

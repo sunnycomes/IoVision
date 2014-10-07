@@ -17,16 +17,17 @@ IoVision is released under the terms of the GPL2.0 license. Distribute and impro
 * Able to preview changes on local host
 
 ##Requirements
+* git			# Git is also required
 * python 		# Any version will do
 * tornado 		# server used to run the previews
 * markdown		# Parsing mardown syntax text to html
 
 
 ##Getting Started
-* python new_post		# Create a new post
-* python generate		# Parse all the markdown text to html files
-* python preview		# Preview changes on local host
-* python deploy		# Push the changes to the remote server
+* python new_post.py		# Create a new post
+* python generate.py		# Parse all the markdown text to html files
+* python preview.py		# Preview changes on local host
+* python deploy.py		# Push the changes to the remote server
 	
 ##Donate
 If you are a digital currency fan, so am I.  

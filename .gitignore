@@ -55,3 +55,4 @@ target/
 
 # any markdown files
 *.markdown
+!about.markdown

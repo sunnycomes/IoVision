@@ -53,7 +53,7 @@ def generate_posts():
         post_file = open(dest + os.sep + post["post_name"] + ".html", "wb")
         post_file.write(html)
     
-def generateAbout():  
+def generate_about():  
     dest = options.build_dir + os.sep + "about"
     mkdir(dest)
     post = BasicParser.parse(options.about_dir, "about.markdown")
@@ -69,7 +69,7 @@ def generate():
     generate_index()
     copy_static_files()
     generate_posts()
-    generateAbout()
+    generate_about()
         
 if __name__ == '__main__':
     root_path = os.path.dirname(os.path.abspath(__file__))

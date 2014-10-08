@@ -14,7 +14,7 @@ class BasicParser:
     '''
     
     @staticmethod
-    def _readPost(post_path):
+    def _read_post(post_path):
         post_file = codecs.open(post_path, mode='r', encoding='utf8')
         lines = post_file.readlines()
         post_file.close()     
@@ -55,7 +55,7 @@ class BasicParser:
     @staticmethod
     def parse(post_dir, post_name):
         post_path = post_dir + os.sep + post_name
-        lines = BasicParser._readPost(post_path)
+        lines = BasicParser._read_post(post_path)
         
         sections = {}
         sections["post_name"] = post_name[0:-9]

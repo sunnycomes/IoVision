@@ -13,7 +13,7 @@ def set_author(author):
 def set_url(url):
     define("url", default=url, help="Author's home page url")
 
-def setTitle(title):
+def set_title(title):
     define("title", default=title, help="Site's title")
  
 def setGithubLink(link):
@@ -56,7 +56,7 @@ def loadConfig(file_path):
     
     set_author(config.get("sect_basic", "author"))
     set_url(config.get("sect_basic", "url"))
-    setTitle(config.get("sect_basic", "title"))
+    set_title(config.get("sect_basic", "title"))
     setGithubLink(config.get("sect_basic", "github_link"))
     setDisqusShortame(config.get("sect_basic", "disqus_shortname"))
     setPort(config.get("sect_server", "port"))

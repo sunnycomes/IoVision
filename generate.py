@@ -42,7 +42,7 @@ def copy_static_files():
     rmdir(dest)
     shutil.copytree(options.static_resource_dir, dest)
 
-def generatePosts():
+def generate_posts():
     dest = options.build_dir + os.sep + "post"
     mkdir(dest)
     posts = markdown_parser.get_all_parsed_posts(brief=False)
@@ -68,7 +68,7 @@ def generate():
     mkdir(options.build_dir)
     generate_index()
     copy_static_files()
-    generatePosts()
+    generate_posts()
     generateAbout()
         
 if __name__ == '__main__':

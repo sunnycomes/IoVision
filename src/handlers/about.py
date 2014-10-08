@@ -7,7 +7,7 @@ Created on Oct 4, 2014
 from tornado.options import options
 from tornado.web import url, RequestHandler
 from src.common.markdown_parser import BasicParser
-from src.common.settings import getSiteInfo
+from src.common.settings import get_site_info
 
 class AboutHandler(RequestHandler):
     '''
@@ -19,7 +19,7 @@ class AboutHandler(RequestHandler):
         post = BasicParser.parse(options.about_dir, full_name)
         post["title"] = options.author
 
-        params = getSiteInfo()
+        params = get_site_info()
         
         template_file_name = "about.html"
         self.render(template_file_name, post = post, params = params)

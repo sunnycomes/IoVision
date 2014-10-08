@@ -6,7 +6,7 @@ Created on Oct 6, 2014
 
 from tornado.options import options
 
-def getSiteInfo():
+def get_site_info():
     params = {}
     params["author"] = options.author
     params["url"] = options.url

@@ -25,7 +25,7 @@ class BasicParser:
         for line in lines:
             if line.find("title: ") > -1:
                 line = line.strip()
-                return line[7:-1]
+                return line[8:-1]
             
         return ""
     

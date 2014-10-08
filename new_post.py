@@ -20,7 +20,7 @@ def format_post_title(tt):
     
     return  '-'.join(words)
     
-def getPostInfo():
+def get_post_info():
     post = {}
     post_title = raw_input("Enter the title, use English anyway: ")
     post["title"] =  "\"" + post_title + "\""
@@ -48,7 +48,7 @@ if __name__ == '__main__':
     config_file_path = root_path + os.sep + "setup.cfg"
     load_config(config_file_path)
     
-    post = getPostInfo()
+    post = get_post_info()
     dest_dir = options.posts_dir
     
     path = dest_dir + os.sep + post["post_name"] + ".markdown"

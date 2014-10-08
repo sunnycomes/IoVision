@@ -12,7 +12,7 @@ from src.common.settings import getSiteInfo
 class PostHandler(RequestHandler):
     '''
     This handler is used to deal with the requests for single post page.
-    Visiting url is http://localhost:6666/post?name=post_name
+    Visiting url is http://localhost:9999/post_name.html
     '''
     def get(self):
         uri = self.request.uri

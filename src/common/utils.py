@@ -22,6 +22,9 @@ def set_github_link(link):
 def set_disqus_shortname(name):
     define("disqus_shortname", default=name, help="Disqus shortname used to identify the site.")
 
+def set_google_analytics_id(idx):
+    define("google_analytics_id", default=idx, help="Google analytics id used to identify this site.")
+    
 def set_port(port):
     define("port", default=port, help="the port tornado listen to")
     
@@ -59,6 +62,7 @@ def load_config(file_path):
     set_title(config.get("sect_basic", "title"))
     set_github_link(config.get("sect_basic", "github_link"))
     set_disqus_shortname(config.get("sect_basic", "disqus_shortname"))
+    set_google_analytics_id(config.get("sect_basic", "google_analytics_id"))
     set_port(config.get("sect_server", "port"))
     set_source_dir(config.get("sect_dir_tree", "source_dir"))
     set_build_dir(config.get("sect_dir_tree", "build_dir"))

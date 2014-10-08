@@ -7,7 +7,7 @@ import os, sys
 import ConfigParser
 from tornado.options import define, options
 
-def setAuthor(author):
+def set_author(author):
     define("author", default=author, help="Author of the project")
 
 def setUrl(url):
@@ -54,7 +54,7 @@ def getConfigFile(file_path):
 def loadConfig(file_path):
     config = getConfigFile(file_path)
     
-    setAuthor(config.get("sect_basic", "author"))
+    set_author(config.get("sect_basic", "author"))
     setUrl(config.get("sect_basic", "url"))
     setTitle(config.get("sect_basic", "title"))
     setGithubLink(config.get("sect_basic", "github_link"))

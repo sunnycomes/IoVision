@@ -64,7 +64,8 @@ def generateAbout():
     about_file = open(dest + os.sep + "index.html", "wb")
     about_file.write(html)
 
-def generate():    
+def generate():
+    mkdir(options.build_dir)
     generateIndex()
     copyStaticFiles()
     generatePosts()

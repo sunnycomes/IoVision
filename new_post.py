@@ -36,7 +36,7 @@ def get_post_info():
     
     return post
 
-def writeToFile(path, post):
+def write_to_file(path, post):
     filex = open(path, "wb")
     content = "---\n" + "title: " + post["title"] + "\n" + "date: " + post["date"] + "\n---\n"
     filex.write(content)
@@ -52,5 +52,5 @@ if __name__ == '__main__':
     dest_dir = options.posts_dir
     
     path = dest_dir + os.sep + post["post_name"] + ".markdown"
-    writeToFile(path, post)
+    write_to_file(path, post)
     

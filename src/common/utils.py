@@ -43,7 +43,7 @@ def set_templates_dir(dirx):
 def set_current_template_dir(name):
     define("current_template_dir", default=options.templates_dir + os.sep + name, help="Current template path")
 
-def setStaticResourceDir(dirx):    
+def set_static_resource_dir(dirx):    
     define("static_resource_dir", default=options.current_template_dir + os.sep + dirx, help="Static resource directory")
     
 def getConfigFile(file_path):     
@@ -66,7 +66,7 @@ def loadConfig(file_path):
     set_about_dir(config.get("sect_dir_tree", "about_dir"))
     set_templates_dir(config.get("sect_dir_tree", "templates_dir"))
     set_current_template_dir(config.get("sect_basic", "template_name"))
-    setStaticResourceDir(config.get("sect_dir_tree", "static_resource_dir"))    
+    set_static_resource_dir(config.get("sect_dir_tree", "static_resource_dir"))    
        
 def initRootPath(root_path):
     # change current working directory to root_path for relative paths to work correctly

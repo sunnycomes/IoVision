@@ -21,7 +21,7 @@ class BasicParser:
         return lines   
     
     @staticmethod
-    def _findTitle(lines):
+    def _find_title(lines):
         for line in lines:
             if line.find("title: ") > -1:
                 line = line.strip()
@@ -59,7 +59,7 @@ class BasicParser:
         
         sections = {}
         sections["post_name"] = post_name[0:-9]
-        sections["title"] = BasicParser._findTitle(lines)
+        sections["title"] = BasicParser._find_title(lines)
         sections["date"] = BasicParser._findDate(lines)
         
         content = BasicParser._findContent(lines)

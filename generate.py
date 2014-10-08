@@ -15,7 +15,7 @@ from src.common.settings import get_site_info
 from src.common import markdown_parser
 from src.common.markdown_parser import BasicParser
 
-def listTemplateFiles():
+def list_template_files():
     return os.listdir(options.current_template_dir)
 
 def mkdir(dirx):

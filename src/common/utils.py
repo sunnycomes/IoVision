@@ -46,13 +46,13 @@ def set_current_template_dir(name):
 def set_static_resource_dir(dirx):    
     define("static_resource_dir", default=options.current_template_dir + os.sep + dirx, help="Static resource directory")
     
-def getConfigFile(file_path):     
+def get_config_file(file_path):     
     config = ConfigParser.RawConfigParser()
     config.read(file_path)
     return config
 
 def loadConfig(file_path):
-    config = getConfigFile(file_path)
+    config = get_config_file(file_path)
     
     set_author(config.get("sect_basic", "author"))
     set_url(config.get("sect_basic", "url"))

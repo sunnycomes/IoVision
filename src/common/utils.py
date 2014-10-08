@@ -22,7 +22,7 @@ def set_github_link(link):
 def set_disqus_shortname(name):
     define("disqus_shortname", default=name, help="Disqus shortname used to identify the site.")
 
-def setPort(port):
+def set_port(port):
     define("port", default=port, help="the port tornado listen to")
     
 def setSourceDir(dirx):
@@ -59,7 +59,7 @@ def loadConfig(file_path):
     set_title(config.get("sect_basic", "title"))
     set_github_link(config.get("sect_basic", "github_link"))
     set_disqus_shortname(config.get("sect_basic", "disqus_shortname"))
-    setPort(config.get("sect_server", "port"))
+    set_port(config.get("sect_server", "port"))
     setSourceDir(config.get("sect_dir_tree", "source_dir"))
     setBuildDir(config.get("sect_dir_tree", "build_dir"))
     setPostDir(config.get("sect_dir_tree", "posts_dir"))

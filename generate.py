@@ -37,7 +37,7 @@ def generate_index():
     index_file = open("build/index.html", "wb")
     index_file.write(html)
 
-def copyStaticFiles():
+def copy_static_files():
     dest = options.build_dir + os.sep + "static"
     rmdir(dest)
     shutil.copytree(options.static_resource_dir, dest)
@@ -67,7 +67,7 @@ def generateAbout():
 def generate():
     mkdir(options.build_dir)
     generate_index()
-    copyStaticFiles()
+    copy_static_files()
     generatePosts()
     generateAbout()
         

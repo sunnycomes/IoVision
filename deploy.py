@@ -7,19 +7,18 @@ Created on Oct 7, 2014
 '''
 
 import os
-import subprocess
 
 from tornado.options import define, options
 from src.common.utils import init_root_path, load_config, get_config_file
 from generate import generate
 
 
-def isRepoInited():
+def is_repo_inited():
     return os.path.exists(options.build_dir)
 
 def add():
     os.chdir(options.build_dir)
-    if isRepoInited():
+    if is_repo_inited():
         os.system("git init")
     
     os.system("git add .")

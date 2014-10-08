@@ -29,7 +29,7 @@ def rmdir(dest):
         shutil.rmtree(dest)
     pass
     
-def generateIndex():
+def generate_index():
     posts = markdown_parser.get_all_parsed_posts()
     params = get_site_info()
     html = TemplateParser.parse(options.current_template_dir, "index.html", posts=posts, params=params)
@@ -66,7 +66,7 @@ def generateAbout():
 
 def generate():
     mkdir(options.build_dir)
-    generateIndex()
+    generate_index()
     copyStaticFiles()
     generatePosts()
     generateAbout()

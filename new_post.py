@@ -10,7 +10,7 @@ import os,time
 from tornado.options import options
 from src.common.utils import init_root_path, load_config
 
-def formatPostTitle(tt):
+def format_post_title(tt):
     tt = tt.lower()
     
     words = tt.split(" ")
@@ -25,7 +25,7 @@ def getPostInfo():
     post_title = raw_input("Enter the title, use English anyway: ")
     post["title"] =  "\"" + post_title + "\""
     
-    title = formatPostTitle(post_title)
+    title = format_post_title(post_title)
     
     timex = time.time()
     current_timex = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(timex))

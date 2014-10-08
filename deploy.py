@@ -10,7 +10,7 @@ import os
 import subprocess
 
 from tornado.options import define, options
-from src.common.utils import initRootPath, loadConfig, get_config_file
+from src.common.utils import initRootPath, load_config, get_config_file
 from generate import generate
 
 
@@ -48,7 +48,7 @@ if __name__ == '__main__':
     initRootPath(root_path)
     
     config_file_path = root_path + os.sep + "setup.cfg"
-    loadConfig(config_file_path)
+    load_config(config_file_path)
     
     config = get_config_file(config_file_path)
     define("github_pages_repo", default = config.get("sect_basic", "github_pages_repo"), help="github pages repo url")

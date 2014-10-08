@@ -8,7 +8,7 @@ Created on Oct 6, 2014
 
 import os,time
 from tornado.options import options
-from src.common.utils import initRootPath, loadConfig
+from src.common.utils import initRootPath, load_config
 
 def formatPostTitle(tt):
     tt = tt.lower()
@@ -46,7 +46,7 @@ if __name__ == '__main__':
     initRootPath(root_path)
     
     config_file_path = root_path + os.sep + "setup.cfg"
-    loadConfig(config_file_path)
+    load_config(config_file_path)
     
     post = getPostInfo()
     dest_dir = options.posts_dir

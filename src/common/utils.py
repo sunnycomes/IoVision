@@ -51,7 +51,7 @@ def get_config_file(file_path):
     config.read(file_path)
     return config
 
-def loadConfig(file_path):
+def load_config(file_path):
     config = get_config_file(file_path)
     
     set_author(config.get("sect_basic", "author"))

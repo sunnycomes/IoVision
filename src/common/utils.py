@@ -10,7 +10,7 @@ from tornado.options import define, options
 def set_author(author):
     define("author", default=author, help="Author of the project")
 
-def setUrl(url):
+def set_url(url):
     define("url", default=url, help="Author's home page url")
 
 def setTitle(title):
@@ -55,7 +55,7 @@ def loadConfig(file_path):
     config = getConfigFile(file_path)
     
     set_author(config.get("sect_basic", "author"))
-    setUrl(config.get("sect_basic", "url"))
+    set_url(config.get("sect_basic", "url"))
     setTitle(config.get("sect_basic", "title"))
     setGithubLink(config.get("sect_basic", "github_link"))
     setDisqusShortame(config.get("sect_basic", "disqus_shortname"))

@@ -10,7 +10,7 @@ import os
 import subprocess
 
 from tornado.options import define, options
-from src.common.utils import initRootPath, load_config, get_config_file
+from src.common.utils import init_root_path, load_config, get_config_file
 from generate import generate
 
 
@@ -45,7 +45,7 @@ def deploy():
     
 if __name__ == '__main__':
     root_path = os.path.dirname(os.path.abspath(__file__))
-    initRootPath(root_path)
+    init_root_path(root_path)
     
     config_file_path = root_path + os.sep + "setup.cfg"
     load_config(config_file_path)

@@ -6,7 +6,7 @@ from tornado.ioloop import IOLoop
 from src.handlers import handlers
 from tornado.options import options
 
-from src.common.utils import initRootPath, load_config
+from src.common.utils import init_root_path, load_config
     
 def initServer():
     settings = dict(
@@ -20,7 +20,7 @@ def initServer():
 
 if __name__ == "__main__":
     root_path = os.path.dirname(os.path.abspath(__file__))
-    initRootPath(root_path)
+    init_root_path(root_path)
     
     config_file_path = root_path + os.sep + "setup.cfg"
     load_config(config_file_path)

@@ -19,7 +19,7 @@ def set_title(title):
 def set_github_link(link):
     define("github_link", default=link, help="Github source code link")
 
-def setDisqusShortame(name):
+def set_disqus_shortname(name):
     define("disqus_shortname", default=name, help="Disqus shortname used to identify the site.")
 
 def setPort(port):
@@ -58,7 +58,7 @@ def loadConfig(file_path):
     set_url(config.get("sect_basic", "url"))
     set_title(config.get("sect_basic", "title"))
     set_github_link(config.get("sect_basic", "github_link"))
-    setDisqusShortame(config.get("sect_basic", "disqus_shortname"))
+    set_disqus_shortname(config.get("sect_basic", "disqus_shortname"))
     setPort(config.get("sect_server", "port"))
     setSourceDir(config.get("sect_dir_tree", "source_dir"))
     setBuildDir(config.get("sect_dir_tree", "build_dir"))

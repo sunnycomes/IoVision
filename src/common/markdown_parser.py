@@ -78,7 +78,7 @@ class BasicParser:
             
         return content[0:end]
 
-def getAllParsedPosts(brief=True):
+def get_all_parsed_posts(brief=True):
         posts = []
         post_name_list = os.listdir(options.posts_dir)
         post_name_list.sort(reverse=True)

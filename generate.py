@@ -30,7 +30,7 @@ def rmdir(dest):
     pass
     
 def generateIndex():
-    posts = markdown_parser.getAllParsedPosts()
+    posts = markdown_parser.get_all_parsed_posts()
     params = getSiteInfo()
     html = TemplateParser.parse(options.current_template_dir, "index.html", posts=posts, params=params)
     
@@ -45,7 +45,7 @@ def copyStaticFiles():
 def generatePosts():
     dest = options.build_dir + os.sep + "post"
     mkdir(dest)
-    posts = markdown_parser.getAllParsedPosts(brief=False)
+    posts = markdown_parser.get_all_parsed_posts(brief=False)
     params = getSiteInfo()
     
     for post in posts:

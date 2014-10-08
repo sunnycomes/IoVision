@@ -5,7 +5,7 @@ Created on Oct 4, 2014
 '''
 
 from tornado.web import url, RequestHandler
-from src.common.markdown_parser import getAllParsedPosts
+from src.common.markdown_parser import get_all_parsed_posts
 from src.common.settings import getSiteInfo
 
 class IndexHandler(RequestHandler):
@@ -14,7 +14,7 @@ class IndexHandler(RequestHandler):
     Visiting url is http://localhost:9999/
     '''
     def get(self):
-        posts = getAllParsedPosts()
+        posts = get_all_parsed_posts()
         
         params = getSiteInfo()
         

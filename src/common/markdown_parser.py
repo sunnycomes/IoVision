@@ -68,7 +68,7 @@ class BasicParser:
         return sections
     
     @staticmethod
-    def getBriefContent(content):        
+    def get_brief_content(content):        
         if content == "":
             return ""
         
@@ -86,7 +86,7 @@ def getAllParsedPosts(brief=True):
         for post_name in post_name_list:
             post = BasicParser.parse(options.posts_dir, post_name)
             if brief:
-                post["content"] = BasicParser.getBriefContent(post["content"])
+                post["content"] = BasicParser.get_brief_content(post["content"])
             posts.append(post)
             
         return posts

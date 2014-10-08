@@ -5,7 +5,7 @@
 }
 
 body {
-	font: 14px Helvetica,"Hiragino Sans GB","Hiragino Sans GB W3",Arial,sans-serif;
+	font: 14px "Microsoft YaHei", "aria", sans-serif;
 	background-image: url(/static/img/bg.jpg);
 	background-attachment: fixed;
 }

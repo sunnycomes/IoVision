@@ -175,7 +175,8 @@ article>.entry-content>pre {
 }
 
 article code {
-	font-size: 14px;
+	font-size: 13px;
+	line-height: 1.5em;
 	font-family: 'Monaco', 'monospace';
 	text-shadow: none;
 }

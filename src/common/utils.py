@@ -25,7 +25,7 @@ def set_disqus_shortname(name):
 def set_port(port):
     define("port", default=port, help="the port tornado listen to")
     
-def setSourceDir(dirx):
+def set_source_dir(dirx):
     define("source_dir", default=os.getcwd() + os.sep + dirx, help="Source files directory")
     
 def setBuildDir(dirx):
@@ -60,7 +60,7 @@ def loadConfig(file_path):
     set_github_link(config.get("sect_basic", "github_link"))
     set_disqus_shortname(config.get("sect_basic", "disqus_shortname"))
     set_port(config.get("sect_server", "port"))
-    setSourceDir(config.get("sect_dir_tree", "source_dir"))
+    set_source_dir(config.get("sect_dir_tree", "source_dir"))
     setBuildDir(config.get("sect_dir_tree", "build_dir"))
     setPostDir(config.get("sect_dir_tree", "posts_dir"))
     setAboutDir(config.get("sect_dir_tree", "about_dir"))

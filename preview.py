@@ -8,7 +8,7 @@ from tornado.options import options
 
 from src.common.utils import init_root_path, load_config
     
-def initServer():
+def init_server():
     settings = dict(
                     debug = True,
                     static_path=options.static_resource_dir,
@@ -25,6 +25,6 @@ if __name__ == "__main__":
     config_file_path = root_path + os.sep + "setup.cfg"
     load_config(config_file_path)
     
-    initServer()
+    init_server()
     IOLoop.current().instance().start()
 

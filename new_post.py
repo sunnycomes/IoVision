@@ -23,7 +23,7 @@ def formatPostTitle(tt):
 def getPostInfo():
     post = {}
     post_title = raw_input("Enter the title, use English anyway: ")
-    post["title"] = post_title
+    post["title"] =  "\"" + post_title + "\""
     
     title = formatPostTitle(post_title)
     

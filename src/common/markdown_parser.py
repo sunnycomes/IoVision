@@ -68,7 +68,10 @@ class BasicParser:
         return sections
     
     @staticmethod
-    def getBriefContent(content):
+    def getBriefContent(content):        
+        if content == "":
+            return ""
+        
         end = -1
         if content.find("<!-- more -->"):
             end = content.index("<!-- more -->")

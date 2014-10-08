@@ -39,7 +39,7 @@ class BasicParser:
         return ""
     
     @staticmethod
-    def _findContent(lines):
+    def _find_content(lines):
         content = ""
         startAt = 1
         for line in lines[1:]:
@@ -62,7 +62,7 @@ class BasicParser:
         sections["title"] = BasicParser._find_title(lines)
         sections["date"] = BasicParser._find_date(lines)
         
-        content = BasicParser._findContent(lines)
+        content = BasicParser._find_content(lines)
         sections["content"] = markdown.markdown(content)
 
         return sections

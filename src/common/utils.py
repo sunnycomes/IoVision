@@ -40,7 +40,7 @@ def set_about_dir(dirx):
 def set_templates_dir(dirx):
     define("templates_dir", default=options.source_dir + os.sep + dirx, help="Templates directory, maybe not only one")
 
-def setCurrentTemplateDir(name):
+def set_current_template_dir(name):
     define("current_template_dir", default=options.templates_dir + os.sep + name, help="Current template path")
 
 def setStaticResourceDir(dirx):    
@@ -65,7 +65,7 @@ def loadConfig(file_path):
     set_post_dir(config.get("sect_dir_tree", "posts_dir"))
     set_about_dir(config.get("sect_dir_tree", "about_dir"))
     set_templates_dir(config.get("sect_dir_tree", "templates_dir"))
-    setCurrentTemplateDir(config.get("sect_basic", "template_name"))
+    set_current_template_dir(config.get("sect_basic", "template_name"))
     setStaticResourceDir(config.get("sect_dir_tree", "static_resource_dir"))    
        
 def initRootPath(root_path):

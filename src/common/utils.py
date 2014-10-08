@@ -34,7 +34,7 @@ def set_build_dir(dirx):
 def set_post_dir(dirx):
     define("posts_dir", default=options.source_dir + os.sep + dirx, help="Post files directory")
 
-def setAboutDir(dirx):
+def set_about_dir(dirx):
     define("about_dir", default=options.source_dir + os.sep + dirx, help="About files directory")
        
 def setTemplatesDir(dirx):
@@ -63,7 +63,7 @@ def loadConfig(file_path):
     set_source_dir(config.get("sect_dir_tree", "source_dir"))
     set_build_dir(config.get("sect_dir_tree", "build_dir"))
     set_post_dir(config.get("sect_dir_tree", "posts_dir"))
-    setAboutDir(config.get("sect_dir_tree", "about_dir"))
+    set_about_dir(config.get("sect_dir_tree", "about_dir"))
     setTemplatesDir(config.get("sect_dir_tree", "templates_dir"))
     setCurrentTemplateDir(config.get("sect_basic", "template_name"))
     setStaticResourceDir(config.get("sect_dir_tree", "static_resource_dir"))    

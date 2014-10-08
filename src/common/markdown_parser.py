@@ -30,7 +30,7 @@ class BasicParser:
         return ""
     
     @staticmethod
-    def _findDate(lines):
+    def _find_date(lines):
         for line in lines:
             if line.find("date: ") > -1:
                 line = line.strip()
@@ -60,7 +60,7 @@ class BasicParser:
         sections = {}
         sections["post_name"] = post_name[0:-9]
         sections["title"] = BasicParser._find_title(lines)
-        sections["date"] = BasicParser._findDate(lines)
+        sections["date"] = BasicParser._find_date(lines)
         
         content = BasicParser._findContent(lines)
         sections["content"] = markdown.markdown(content)

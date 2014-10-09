@@ -176,9 +176,15 @@ article>.entry-content>pre {
 
 article code {
 	font-size: 13px;
-	line-height: 1.5em;
+	line-height: 1.8em;
 	font-family: 'Monaco', 'monospace';
-	text-shadow: none;
+	padding: 3px;
+	color: #333;
+	border: 1px solid #ddd;
+	word-wrap: normal;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
 }
 
 strong {

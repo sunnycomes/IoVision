@@ -174,11 +174,21 @@ article>.entry-content>pre {
 	box-shadow: inset 0 0 1px rgb(50,50,50);
 }
 
+
 article code {
 	font-size: 13px;
-	line-height: 1.5em;
+	line-height: 1.8em;
 	font-family: 'Monaco', 'monospace';
-	text-shadow: none;
+	color: #333;
+}
+
+p>code {
+	padding: 3px;
+	border: 1px solid #ddd;
+	word-wrap: normal;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
 }
 
 strong {

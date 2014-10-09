@@ -180,3 +180,7 @@ article code {
 	font-family: 'Monaco', 'monospace';
 	text-shadow: none;
 }
+
+strong {
+	color: #333;
+}

@@ -17,9 +17,9 @@ IoVision is released under the terms of the GPL2.0 license. Distribute and impro
 * Able to preview changes on local host
 
 ##Requirements
-* git			# Git is also required
+* git			# Git is required
 * python 		# Any version will do
-* tornado 		# server used to run the previews
+* tornado3.1.1+ 	# server used to run the previews
 * markdown		# Parsing mardown syntax text to html
 
 

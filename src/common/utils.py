@@ -48,6 +48,9 @@ def set_current_template_dir(name):
 
 def set_static_resource_dir(dirx):    
     define("static_resource_dir", default=options.current_template_dir + os.sep + dirx, help="Static resource directory")
+
+def set_global_resource_dir(dirx):    
+    define("global_resource_dir", default=options.source_dir + os.sep + dirx, help="Global resource directory")
     
 def get_config_file(file_path):     
     config = ConfigParser.RawConfigParser()
@@ -70,7 +73,8 @@ def load_config(file_path):
     set_about_dir(config.get("sect_dir_tree", "about_dir"))
     set_templates_dir(config.get("sect_dir_tree", "templates_dir"))
     set_current_template_dir(config.get("sect_basic", "template_name"))
-    set_static_resource_dir(config.get("sect_dir_tree", "static_resource_dir"))    
+    set_static_resource_dir(config.get("sect_dir_tree", "static_resource_dir"))
+    set_global_resource_dir(config.get("sect_dir_tree", "global_resource_dir"))
        
 def init_root_path(root_path):
     # change current working directory to root_path for relative paths to work correctly

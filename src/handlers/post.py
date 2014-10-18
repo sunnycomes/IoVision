@@ -26,4 +26,4 @@ class PostHandler(RequestHandler):
         self.render(template_file_name, post = post, params = params)
 
 
-handler = url(r"/post/.*", PostHandler)
+handler = (r"/post/.*", PostHandler)

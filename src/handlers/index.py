@@ -21,4 +21,4 @@ class IndexHandler(RequestHandler):
         template_file_name = "index.html"
         self.render(template_file_name, posts = posts, params = params)
 
-handler = url(r"/", IndexHandler)     
+handler = (r"/", IndexHandler)     

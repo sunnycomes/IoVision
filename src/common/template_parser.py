@@ -6,6 +6,7 @@ Created on Oct 6, 2014
 
 from tornado import template
 
+
 class TemplateParser(object):
     '''
     This TemplateParser is a util class dedicated to parse html template files

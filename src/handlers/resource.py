@@ -7,6 +7,7 @@ Created on Oct 4, 2014
 from tornado.options import options
 from tornado.web import  StaticFileHandler
 
+
 class ResourceHandler(StaticFileHandler):
     '''
     This handler is used to deal with the requests for resource, such as images or plain text files.

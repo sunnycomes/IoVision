@@ -4,8 +4,10 @@ Created on Oct 6, 2014
 @author: sunnycomes
 '''
 import os
-from src.common.markdown_parser import BasicParser
+
 from src.common import template_parser
+from src.common.markdown_parser import BasicParser
+
 
 if __name__ == '__main__':
     params = {}

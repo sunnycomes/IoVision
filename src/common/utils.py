@@ -3,9 +3,10 @@ Created on Oct 6, 2014
 
 @author: sunnycomes
 '''
-import os, sys
 import ConfigParser
+import os, sys
 from tornado.options import define, options
+
 
 def set_author(author):
     define("author", default=author, help="Author of the project")

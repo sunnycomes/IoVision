@@ -3,10 +3,11 @@ Created on Oct 4, 2014
 
 @author: sunnycomes
 '''
-import os
 import codecs
 import markdown
+import os
 from tornado.options import options
+
 
 class BasicParser:
     '''

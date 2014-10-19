@@ -6,6 +6,7 @@ Created on Oct 6, 2014
 import os
 from tornado.options import options
 
+
 def get_site_info():
     params = {}
     params["author"] = options.author

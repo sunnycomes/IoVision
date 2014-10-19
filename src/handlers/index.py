@@ -5,8 +5,10 @@ Created on Oct 4, 2014
 '''
 
 from tornado.web import RequestHandler
+
 from src.common.markdown_parser import get_all_parsed_posts
 from src.common.settings import get_site_info, get_3rd_party_snippet
+
 
 class IndexHandler(RequestHandler):
     '''

@@ -9,11 +9,13 @@ Created on Oct 6, 2014
 import os
 import shutil
 from tornado.options import options
-from src.common.utils import init_root_path, load_config
-from src.common.template_parser import TemplateParser
-from src.common.settings import get_site_info, get_3rd_party_snippet
+
 from src.common import markdown_parser
 from src.common.markdown_parser import BasicParser
+from src.common.settings import get_site_info, get_3rd_party_snippet
+from src.common.template_parser import TemplateParser
+from src.common.utils import init_root_path, load_config
+
 
 def list_template_files():
     return os.listdir(options.current_template_dir)

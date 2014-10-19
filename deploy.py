@@ -7,10 +7,10 @@ Created on Oct 7, 2014
 '''
 
 import os
-
 from tornado.options import define, options
-from src.common.utils import init_root_path, load_config, get_config_file
+
 from generate import generate
+from src.common.utils import init_root_path, load_config, get_config_file
 
 
 def is_repo_inited():

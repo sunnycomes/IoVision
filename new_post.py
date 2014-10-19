@@ -6,9 +6,11 @@ Created on Oct 6, 2014
 @author: sunnycomes
 '''
 
-import os,time
+import os, time
 from tornado.options import options
+
 from src.common.utils import init_root_path, load_config
+
 
 def format_post_title(tt):
     tt = tt.lower()

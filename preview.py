@@ -1,13 +1,14 @@
 #!/usr/bin/env PYTHON
 
 import os
-from tornado.web import Application
 from tornado.ioloop import IOLoop
-from src.handlers import handlers
 from tornado.options import options
+from tornado.web import Application
 
 from src.common.utils import init_root_path, load_config
-    
+from src.handlers import handlers
+
+
 def init_server():
     settings = dict(
                     debug = True,

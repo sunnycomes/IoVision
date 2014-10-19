@@ -6,8 +6,10 @@ Created on Oct 4, 2014
 
 from tornado.options import options
 from tornado.web import RequestHandler
+
 from src.common.markdown_parser import BasicParser
 from src.common.settings import get_site_info, get_3rd_party_snippet
+
 
 class PostHandler(RequestHandler):
     '''

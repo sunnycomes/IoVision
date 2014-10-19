@@ -11,7 +11,7 @@ import shutil
 from tornado.options import options
 from src.common.utils import init_root_path, load_config
 from src.common.template_parser import TemplateParser
-from src.common.settings import get_site_info
+from src.common.settings import get_site_info, get_3rd_party_snippet
 from src.common import markdown_parser
 from src.common.markdown_parser import BasicParser
 
@@ -32,7 +32,8 @@ def rmdir(dest):
 def generate_index():
     posts = markdown_parser.get_all_parsed_posts()
     params = get_site_info()
-    html = TemplateParser.parse(options.current_template_dir, "index.html", posts=posts, params=params)
+    snippets = get_3rd_party_snippet()
+    html = TemplateParser.parse(options.current_template_dir, "index.html", posts=posts, params=params, snippets=snippets)
     
     index_file = open("build/index.html", "wb")
     index_file.write(html)
@@ -47,9 +48,9 @@ def generate_posts():
     mkdir(dest)
     posts = markdown_parser.get_all_parsed_posts(brief=False)
     params = get_site_info()
-    
+    snippets = get_3rd_party_snippet()
     for post in posts:
-        html = TemplateParser.parse(options.current_template_dir, "post.html", post=post, params=params)
+        html = TemplateParser.parse(options.current_template_dir, "post.html", post=post, params=params, snippets = snippets)
         post_file = open(dest + os.sep + post["post_name"] + ".html", "wb")
         post_file.write(html)
     
@@ -59,8 +60,8 @@ def generate_about():
     post = BasicParser.parse(options.about_dir, "about.markdown")
     post["title"] = options.author
     params = get_site_info()
-    
-    html = TemplateParser.parse(options.current_template_dir, "about.html", post=post, params=params)
+    snippets = get_3rd_party_snippet()
+    html = TemplateParser.parse(options.current_template_dir, "about.html", post=post, params=params, snippets=snippets)
     about_file = open(dest + os.sep + "index.html", "wb")
     about_file.write(html)
 

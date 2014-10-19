@@ -6,7 +6,7 @@ Created on Oct 4, 2014
 
 from tornado.web import url, RequestHandler
 from src.common.markdown_parser import get_all_parsed_posts
-from src.common.settings import get_site_info
+from src.common.settings import get_site_info, get_3rd_party_snippet
 
 class IndexHandler(RequestHandler):
     '''
@@ -18,7 +18,10 @@ class IndexHandler(RequestHandler):
         
         params = get_site_info()
         
+        snippets = get_3rd_party_snippet()
+        
         template_file_name = "index.html"
-        self.render(template_file_name, posts = posts, params = params)
+        
+        self.render(template_file_name, posts = posts, params = params, snippets = snippets)
 
-handler = url(r"/", IndexHandler)     
+handler = (r"/", IndexHandler)     

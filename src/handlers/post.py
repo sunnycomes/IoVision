@@ -7,7 +7,7 @@ Created on Oct 4, 2014
 from tornado.options import options
 from tornado.web import url, RequestHandler
 from src.common.markdown_parser import BasicParser
-from src.common.settings import get_site_info
+from src.common.settings import get_site_info, get_3rd_party_snippet
 
 class PostHandler(RequestHandler):
     '''
@@ -22,8 +22,10 @@ class PostHandler(RequestHandler):
         
         params = get_site_info()
         
+        snippets = get_3rd_party_snippet()
+        
         template_file_name = "post.html"
-        self.render(template_file_name, post = post, params = params)
+        self.render(template_file_name, post = post, params = params, snippets = snippets)
 
 
-handler = url(r"/post/.*", PostHandler)
+handler = (r"/post/.*", PostHandler)

@@ -11,7 +11,7 @@ def get_site_info():
     params["author"] = options.author
     params["url"] = options.url
     params["title"] = options.title
-    params["github_link"] = options.github_link
+    params["github_fork_link"] = options.github_fork_link
     params["disqus_shortname"] = options.disqus_shortname
     params["google_analytics_id"] = options.google_analytics_id
     
@@ -31,6 +31,6 @@ def get_3rd_party_snippet():
     
     github_fork_file = file(dest_dir + os.sep + "github_fork.snippet")
     github_fork_snippet = github_fork_file.read()
-    snippets["github_fork_snippet"] = github_fork_snippet.replace("param_github_link", options.github_link)
+    snippets["github_fork_snippet"] = github_fork_snippet.replace("param_github_fork_link", options.github_fork_link)
     
     return snippets

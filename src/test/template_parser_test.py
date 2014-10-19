@@ -12,7 +12,7 @@ if __name__ == '__main__':
     params["author"] = "options.author"
     params["url"] = "options.url"
     params["title"] = "options.title"
-    params["github_link"] = "options.github_link"
+    params["github_fork_link"] = "options.github_fork_link"
     params["disqus_shortname"] = "options.disqus_shortname"
     
     post = BasicParser.parse(os.getcwd() + os.sep + "resources", "2014-03-1-talk-about-bitcoin-change.markdown")

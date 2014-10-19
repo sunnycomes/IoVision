@@ -16,8 +16,8 @@ def set_url(url):
 def set_title(title):
     define("title", default=title, help="Site's title")
  
-def set_github_link(link):
-    define("github_link", default=link, help="Github source code link")
+def set_github_fork_link(link):
+    define("github_fork_link", default=link, help="Github source code link")
 
 def set_disqus_shortname(name):
     define("disqus_shortname", default=name, help="Disqus shortname used to identify the site.")
@@ -63,7 +63,7 @@ def load_config(file_path):
     set_author(config.get("sect_basic", "author"))
     set_url(config.get("sect_basic", "url"))
     set_title(config.get("sect_basic", "title"))
-    set_github_link(config.get("sect_basic", "github_link"))
+    set_github_fork_link(config.get("sect_basic", "github_fork_link"))
     set_disqus_shortname(config.get("sect_basic", "disqus_shortname"))
     set_google_analytics_id(config.get("sect_basic", "google_analytics_id"))
     set_port(config.get("sect_server", "port"))

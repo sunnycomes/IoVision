@@ -14,7 +14,7 @@ class ResourceHandler(StaticFileHandler):
     Visiting url is http://localhost:9999/res/item_path, item_path is the path relative to global_resource_dir
     '''
     
-    def initialize(self, path=None):
+    def initialize(self, path=None, default_filename=None):
         uri_path = self.request.uri
         rel_path = "/".join(uri_path.split("/")[2:-1])
         super(ResourceHandler, self).initialize(options.global_resource_dir, rel_path)
@@ -23,7 +23,7 @@ class ResourceHandler(StaticFileHandler):
     def get_absolute_path(cls, root, path):
         return StaticFileHandler.get_absolute_path(root, "")
 
-    def get(self):
+    def get(self, path=None, include_body=True):
         super(ResourceHandler, self).get("")
 
 handler = (r"/res/.*", ResourceHandler)

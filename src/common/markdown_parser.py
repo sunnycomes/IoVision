@@ -79,9 +79,19 @@ class BasicParser:
             
         return content[0:end]
 
+def get_all_markdown_files(items):
+    post_name_list = []
+    
+    for item in items:
+        if os.path.splitext(item)[1] == ".markdown":
+            post_name_list.append(item)
+
+    return post_name_list
+
 def get_all_parsed_posts(brief=True):
         posts = []
-        post_name_list = os.listdir(options.posts_dir)
+        items = os.listdir(options.posts_dir)
+        post_name_list = get_all_markdown_files(items)
         post_name_list.sort(reverse=True)
         
         for post_name in post_name_list:

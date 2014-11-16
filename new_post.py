@@ -31,7 +31,7 @@ def get_post_info():
     
     timex = time.time()
     current_timex = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(timex))
-    post["date"] = current_timex
+    post["date"] = current_timex + " +080"
     
     current_date = time.strftime('%Y-%m-%d',time.localtime(timex))
     post["post_name"] = current_date + "-" + title

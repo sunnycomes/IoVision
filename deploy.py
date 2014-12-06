@@ -13,36 +13,50 @@ from generate import generate
 from src.common.utils import init_root_path, load_config, get_config_file
 
 
-def is_repo_inited():
+def is_build_dir_exists():
     return os.path.exists(options.build_dir)
 
-def init():
-    if is_repo_inited():
-        os.system("git init")
-    
-def add():
+def get_in():
     os.chdir(options.build_dir)
-    os.system("git add .")
+	
+def go_back():
+    os.chdir(options.root_path)
+	
+def init():
+    if is_build_dir_exists():
+        os.system("git init")
+
+def reset():
+    if(is_build_dir_exists()):
+        os.system("git reset --hard")
+		
+def add():
+    os.system("git add -A")
     
 def commit():
-    os.chdir(options.build_dir)
     os.system("git commit -a -m 'New changes has made.'")
 
 def pull():
-    os.chdir(options.build_dir)
     os.system("git pull " + options.github_pages_repo + " master")
     
 def push():
-    os.chdir(options.build_dir)
     os.system("git push " + options.github_pages_repo + " master")
 
+def sync():
+    if is_build_dir_exists():
+        get_in()
+        init()
+        reset()
+        pull()
+        go_back()
+		
 def deploy():
-    init() 
-    pull()
+    get_in()
     add()
     commit()
     pull()
     push()
+    go_back()
     
 if __name__ == '__main__':
     root_path = os.path.dirname(os.path.abspath(__file__))
@@ -54,6 +68,8 @@ if __name__ == '__main__':
     config = get_config_file(config_file_path)
     define("github_pages_repo", default = config.get("sect_basic", "github_pages_repo"), help="github pages repo url")
 
+    sync()
+    
     generate()
     
     deploy()

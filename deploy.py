@@ -16,11 +16,12 @@ from src.common.utils import init_root_path, load_config, get_config_file
 def is_repo_inited():
     return os.path.exists(options.build_dir)
 
-def add():
-    os.chdir(options.build_dir)
+def init():
     if is_repo_inited():
         os.system("git init")
     
+def add():
+    os.chdir(options.build_dir)
     os.system("git add .")
     
 def commit():
@@ -36,7 +37,8 @@ def push():
     os.system("git push " + options.github_pages_repo + " master")
 
 def deploy():
-    
+    init() 
+    pull()
     add()
     commit()
     pull()

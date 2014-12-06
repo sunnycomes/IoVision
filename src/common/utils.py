@@ -53,6 +53,9 @@ def set_static_resource_dir(dirx):
 def set_global_resource_dir(dirx):    
     define("global_resource_dir", default=options.source_dir + os.sep + dirx, help="Global resource directory")
     
+def set_root_path(root_path):
+    define("root_path", default=root_path, help="Project root path")
+
 def get_config_file(file_path):     
     config = ConfigParser.RawConfigParser()
     config.read(file_path)
@@ -78,6 +81,8 @@ def load_config(file_path):
     set_global_resource_dir(config.get("sect_dir_tree", "global_resource_dir"))
        
 def init_root_path(root_path):
+    set_root_path(root_path)
+	
     # change current working directory to root_path for relative paths to work correctly
     os.chdir(root_path)
     if os.access(root_path, os.F_OK):

@@ -5,7 +5,8 @@
 }
 
 body {
-	font: 14px "Microsoft YaHei", "aria", sans-serif;
+	line-height: 1.6em;
+	font: 16px "Source Sans Pro", "stheiti", "microsoft yahei", sans-serif; 
 	background-image: url(/static/img/bg.jpg);
 	background-attachment: fixed;
 }
@@ -114,7 +115,7 @@ article {
 
 article p {
 	margin: 0 0 24px 0;
-	line-height: 1.5em;
+	line-height: 1.8em;
 }
 
 h1, h2, h3, h4, h5, h6 {

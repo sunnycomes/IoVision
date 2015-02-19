@@ -47,7 +47,7 @@ a {
 	width: 90%;
 }
 
-article {
+article, #pager_bar {
 	background: rgba(255,255,255,1);
 	-webkit-border-radius: 3px;
 	-moz-border-radius:3px;
@@ -55,6 +55,10 @@ article {
 	margin: 0 0 1.625em;
 	padding: 0 0 1.625em;
 	box-shadow:0 0 10px rgba(200,200,200,0.8);
+}
+
+#pager_bar {
+	height: 30px;
 }
 
 .article_wrapper {
@@ -242,4 +246,16 @@ strong {
 
 .go .bottom:hover {
 	background-position:-38px -55px
+}
+
+#pager_bar a{
+	margin: 20px 20px;
+}
+
+#prev_page {
+	float: left;
+}
+
+#next_page {
+	float: right;
 }

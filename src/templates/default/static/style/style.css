@@ -194,3 +194,52 @@ p>code {
 strong {
 	color: #333;
 }
+
+.go {
+	width:47px;
+	height:106px;
+	position:fixed;
+	right:12px;
+	bottom:25%; 
+	background-image:url("http://www.webdm.cn/images/20130508/tobg.png"); 
+	background-repeat:no-repeat;
+}
+
+.go a {
+	background:url("http://www.webdm.cn/images/20130508/a.png") no-repeat;
+	display:block;
+	text-indent:999em;
+	width:37px;
+	margin:5px;
+	border:0;
+	overflow:hidden;
+	float:left; 
+	cursor:pointer;
+}
+
+.go .top {
+	background-position:0 0px;
+	height:22px
+}
+
+.go .feedback {
+	background-position:0 -22px;
+	height:32px
+}
+
+.go .bottom {
+	background-position:0 -55px;
+	height:22px
+}
+
+.go .top:hover {
+	background-position:-38px -0px
+}
+
+.go .feedback:hover {
+	background-position:-38px -22px
+}
+
+.go .bottom:hover {
+	background-position:-38px -55px
+}

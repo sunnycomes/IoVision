@@ -159,8 +159,10 @@ article li {
 article img {
 	text-align: center;
 	margin: 0 auto;
-
 	max-width: 570px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
 }
 
 article pre {

@@ -21,7 +21,7 @@ a {
 	max-width: 90%; 
 }
 
-#main {
+#main, .footer {
 	margin-left: 16%;
 }
 
@@ -103,16 +103,18 @@ article, #pager_bar {
 }
 
 .footer {
-	margin-left: 220px;
 	clear: both;
 }
 
-.footer_powered_by {
-	border-top: 1px solid #DDD;
+.footer div {
+	width: 90%;
+}
+
+.footer_links, .footer_powered_by {
 	color: #666;
-	font-size: 12px;
-	line-height: 2.2em;
-	padding: 2.2em 0.5em;
+	font-size: 13px;
+	line-height: 1.2em;
+	padding: 0.6em 0.5em;
 	text-align: center;
 	font-family: "Lato", 'Xin Gothic', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', "aria", sans-serif;
 }

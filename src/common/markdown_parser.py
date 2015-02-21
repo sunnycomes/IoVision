@@ -74,9 +74,9 @@ class BasicParser:
             return ""
         
         end = -1
-        if content.find("<!-- more -->"):
+        if content.find("<!-- more -->") != -1:
             end = content.index("<!-- more -->")
-            
+
         return content[0:end]
 
 def get_all_markdown_files(items):

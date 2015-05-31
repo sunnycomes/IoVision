@@ -16,7 +16,7 @@ footer: true
 1. 2013.9 ~ Now, 北京邮电大学，信息安全硕士
 
 ####Photo  
-想看就点 ***[here](/static/img/me.png)***，大众脸，平凡人，不平凡的心.
+想看就点 ***[here](https://dn-iovi.qbox.me/me.png)***，大众脸，平凡人，不平凡的心.
 
 ####Wallet
 比特币钱包(Bitcoin)：<a href="https://blockchain.info/address/17L2bPF8WRhu81UBZnBsQfiopdnDFKFv5W" target="_blank">17L2bPF8WRhu81UBZnBsQfiopdnDFKFv5W</a>  

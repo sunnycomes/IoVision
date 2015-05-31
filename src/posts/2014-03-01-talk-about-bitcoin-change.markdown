@@ -8,7 +8,7 @@ categories:
 tags: Bitcoin
 ---
 
-![比特币找零](http://img5.douban.com/view/photo/photo/public/p2228618606.jpg)
+![比特币找零](https://dn-iovi.qbox.me/p2228618606.jpg)
 
 刚开始接触比特币的时候，一定很多人困惑于比特币的找零，幸好资料很多，随手从网上找了一篇，很详尽[《详解比特币的找零机制》](http://jingyan.baidu.com/article/19192ad84bcd54e53e570729.html)，大家可以做一个入门导读。
 

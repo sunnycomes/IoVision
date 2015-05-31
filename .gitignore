@@ -63,3 +63,5 @@ target/
 *.py~
 
 src/posts/.gitignore
+*.DS_Store
+._*

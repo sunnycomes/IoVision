@@ -6,7 +6,7 @@
 
 body {
 	line-height: 1.6em;
-	font: 16px "Source Sans Pro", "stheiti", "microsoft yahei", sans-serif; 
+	font: 13px "Source Sans Pro", "stheiti", "microsoft yahei", sans-serif; 
 	background-image: url(https://dn-iovi.qbox.me/bg.jpg);
 	background-attachment: fixed;
 }
@@ -126,15 +126,16 @@ article p {
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0.4em 0px;
+	font-size: 0.7em;
 }
 article h1 {
-	font-size: 1.8em;
+	font-size: 1.5em;
 }
 article h2 {
-	font-size: 1.6em;
+	font-size: 1.4em;
 }
 article h3 {
-	font-size: 1.4em;
+	font-size: 1.3em;
 }
 article h4 {
 	font-size: 1.2em;

@@ -26,9 +26,9 @@ tags: Bitcoin
 
 <script src="https://code.csdn.net/snippets/680184.js"></script>
 
-里面有两个比较重要的知识点: `Input`和`Output`, `Input`写明这个地址的钱来自哪一次Transaction的哪一个`Output`, 如果有兴趣, 可以不断的往前回溯, 最终发现来自叫做[Coinbase](https://en.bitcoin.it/wiki/Coinbase)的东西; 而`Output`表示这个钱转移的地址, 并且, `scriptPubKey`中申明了如果要使用这部分钱, 得满足这些条件. 再回到UTXO, 上面提到, `Input`写明这个地址的钱来自哪一次Transaction的哪一个`Output`中来的, 这个Output如果是UTXO, 则这笔钱是Unspent状态, 未被使用, 则可用于支付. 假如你有一个新钱包地址ADDR, 张三给你发了1BTC, 这就是一次交易, 记作TXa;李四给你发了2BTC, 记作TXb, 那么如果你没有消费掉这两笔钱, 则你的钱包地址相关的UTXO有两个, 一个在TXa中, 记为UTXOa, 另外一个在TXb中, 记为UTXOb, 则钱包最终余额为`UTXOa + UTXOb = 3BTC. 
+里面有两个比较重要的知识点: `Input`和`Output`, `Input`写明这个地址的钱来自哪一次Transaction的哪一个`Output`, 如果有兴趣, 可以不断的往前回溯, 最终发现来自叫做[Coinbase](https://en.bitcoin.it/wiki/Coinbase)的东西; 而`Output`表示这个钱转移的地址, 并且, `scriptPubKey`中申明了如果要使用这部分钱, 得满足这些条件. 
 
-另外, 如果你有兴趣, 可以去[blockexplorer.com](blockexplorer.com)查一下, 在blockchain中, [Genesis Block](http://blockexplorer.com/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f)的挖矿奖励是unspent状态, 这笔钱最后会是什么状态, 耐人寻味, 如果我是那个拥有者, 或许我会一直保留. 当然, 如果这笔钱被消费掉, 也是意义非凡. 
+再回到UTXO, 上面提到, `Input`写明这个地址的钱来自哪一次Transaction的哪一个`Output`中来的, 这个Output如果是UTXO, 则这笔钱是Unspent状态, 未被使用, 则可用于支付. 假如你有一个新钱包地址ADDR, 张三给你发了1BTC, 这就是一次交易, 记作TXa;李四给你发了2BTC, 记作TXb, 那么如果你没有消费掉这两笔钱, 则你的钱包地址相关的UTXO有两个, 一个在TXa中, 记为UTXOa, 另外一个在TXb中, 记为UTXOb, 则钱包最终余额为`UTXOa + UTXOb = 3BTC. 另外, 如果你有兴趣, 可以去[blockexplorer.com](blockexplorer.com)查一下, 在blockchain中, [Genesis Block](http://blockexplorer.com/block/000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f)的挖矿奖励是unspent状态, 这笔钱最后会是什么状态, 耐人寻味, 如果我是那个拥有者, 或许我会一直保留. 当然, 如果这笔钱被消费掉, 也是意义非凡. 
 
 原文中举了一个买棒棒糖的例子, 
 
@@ -48,6 +48,6 @@ UTXO一旦被引用, 并且Transactionx得到Confirmation, 则UTXO变为spent状
 
 ###References
 
-[1. Transaction](https://en.bitcoin.it/wiki/Transaction)
-[2. Example of multi input address](https://blockchain.info/tx/9da25d3d2ad74e264bcaf4c1cbd810799e9da36d061eceaeb2b1da1fbd0924e2)
+[1. Transaction](https://en.bitcoin.it/wiki/Transaction)  
+[2. Example of multi input address](https://blockchain.info/tx/9da25d3d2ad74e264bcaf4c1cbd810799e9da36d061eceaeb2b1da1fbd0924e2)  
 [3. How to convert bitcoin public key to address](http://gobittest.appspot.com/Address)

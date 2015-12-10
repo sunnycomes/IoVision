@@ -62,4 +62,8 @@ target/
 *.css~
 *.py~
 
+# Operating system related files or directories
+.DS_Store
+
 src/posts/.gitignore
+

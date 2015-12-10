@@ -61,7 +61,11 @@ tags: Bitcoin
 
 还有一个`Transaction Fee`的问题, 矿工是如何收到这笔钱的, 为什么你的Transaction没有写这部分的去向? 其实, 旷工是通过将一个block中所有Transaction Fee加起来, 并且加上此次挖矿的奖励(如25btc, 当前2014年3月), 单独创建一个Transaction, 转移到自己的钱包地址, 这笔Transaction位于每一个block的第一条记录, 如这次[交易](http://blockexplorer.com/block/0000000000000000bc7b8f8b4a60aeb73c05de005797af3b78e84d61c93f3d15). 你肯定很好奇, 矿工挖矿的比特币, 需要几个确认才能使用, 能立马花掉吗? 答案是否定的, 在比特币程序里面, 明确定义了, 矿工的收益需要100个Confirmation之后, 才能使用, 这也是为什么, 从Genesis Block到后面的100个blcok之间, 都没有任何人为的Transaction, 只有挖矿产生的Transaction. 
 
-原文中, 
+这种说法其实不对，这里根本没有销毁和创建一说，这里不得不提到比特币里Transaction[1]这个概念，一个地址内的余额，是通过查找各个相关Transaction得到的。假设Transaction Ta，我给Address Aa发了1btc, Transaction Tb给Aa发了1btc，那么Aa的
+
+找零是由第一个地址确定的.
+
+比特币里面的已经产生的账本，即Block是不能修改的，因此，只能往下添加账本[Ledger]，来表明之前的余额已经被消费掉。假设Transaction Ta。
 
 >同时为了防止双重支付和伪造, 必须确保在任何时候, 新创建的货币金额与被销毁的货币金额是完全一样的. 
 
@@ -72,3 +76,21 @@ UTXO一旦被引用, 并且Transactionx得到Confirmation, 则UTXO变为spent状
 不知道大家有没有注意到，原文中始终没有提到为什么要创建新地址接收余额，为什么？理论上，新地址和旧地址(支付地址)接收余额性质是一样的，技术上实现也是没有问题的，聪明的你不知道有没有注意到一个问题，比特币是匿名币，非常注重**隐私**，匿名不止体现在比特币地址上，还体现在找零机制,引用比特币[官网](https://en.bitcoin.it/wiki/Securing_your_wallet)上的一段话:
 
 >This is an anonymity feature – it makes tracking Bitcoin transactions much more difficult.
+
+Bitcoin Exchange
+
+Bitcoin Transaction
+
+What is bitcoin address
+
+How calculate the total money of a address
+
+example of multi input address : https://blockchain.info/tx/9da25d3d2ad74e264bcaf4c1cbd810799e9da36d061eceaeb2b1da1fbd0924e2
+
+types of transaction
+
+How to convert bitcoin public key to address : http://gobittest.appspot.com/Address
+
+###References
+
+[1.Transaction](https://en.bitcoin.it/wiki/Transaction)

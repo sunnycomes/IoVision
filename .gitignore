@@ -59,11 +59,10 @@ target/
 !about.markdown
 
 # any temporary files
-*.css~
-*.py~
+*~
 
 # Operating system related files or directories
 .DS_Store
+._*
 
 src/posts/.gitignore
-

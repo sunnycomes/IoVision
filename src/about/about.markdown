@@ -1,9 +1,9 @@
 ---
 layout: page
-title: About Sunnycomes
-keywords: About,Sunnycomes,IoVision
-description: This is Sunnycomes's writting platform named IoVision
-date: 2013-12-31 19:41
+title: Sunnycomes, a phd candidate
+keywords: About,Sunnycomes,Computer Science,Phd Candidate
+description: I am Sunnycomes and currently a phd candidate majoring in Computer Science at BUPT.
+date: 2013-12-31 19:41:00
 comment_allowed: true
 sharing: true
 footer: true

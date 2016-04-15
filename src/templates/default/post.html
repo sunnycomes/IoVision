@@ -3,7 +3,9 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<title>{{ params["title"] }}</title>
+		<title>{{ post["title"] }}</title>
+                <meta name="description" content="{{ post['description']}}">
+                <meta name="keyword" content="{{ post['keywords'] }}">
 		<link rel="shortcut icon" href="/static/img/favicon.ico">
 		<link rel="stylesheet" href="/static/style/style.css" type="text/css">
 		<script type="text/javascript" src="https://dn-iovi.qbox.me/jquery.js"></script>
@@ -13,32 +15,33 @@
 	<body>
 		<div id="content">
 			{% include "nav.html" %}
-			
+
 			<div id="main">
 				<div class="article_wrapper">
 					<article>
 						<div class="entry-header">
 							<h1 class="entry-title">{{ post["title"] }}</h1>
-							
+
 							<div class="entry-meta">
 								<span class="sep"><time>{{ post["date"] }}</time></span>
 							</div>
 						</div>
-						
+
 						<div class="entry-content">
 							{{ post["content"] }}
 						</div>
-						
+
 					</article>
-					
-					{{ snippets["disqus_snippet"]}}
-										
+
+                                        <div class="comment_allowed_{{ post['comment_allowed'] }}">
+        					{{ snippets["disqus_snippet"]}}
+                                        </div>
 				</div>
 			</div>
-			
+
 			{% include "footer.html" %}
-			
+
 		</div>
-		
+
 	</body>
 </html>

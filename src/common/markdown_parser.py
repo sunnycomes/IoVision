@@ -70,7 +70,6 @@ class BasicParser:
         for line in lines:
             if line.find("comment_allowed: ") > -1:
                 line = line.strip()
-                print(line)
                 return line[17:len(line)]
 
         return "true"

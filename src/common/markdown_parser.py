@@ -89,6 +89,15 @@ class BasicParser:
         return content
 
     @staticmethod
+    def _find_published(lines):
+        for line in lines:
+            if line.find("published: ") > -1:
+                line = line.strip()
+                return line[11:len(line)]
+
+        return "true"
+
+    @staticmethod
     def parse(post_dir, post_name):
         post_path = post_dir + os.sep + post_name
         lines = BasicParser._read_post(post_path)
@@ -101,6 +110,7 @@ class BasicParser:
         sections["categories"] = BasicParser._find_categories(lines)
         sections["date"] = BasicParser._find_date(lines)
         sections["comment_allowed"] = BasicParser._find_comment_allowed(lines)
+        sections['published'] = BasicParser._find_published(lines)
 
         content = BasicParser._find_content(lines)
         sections["content"] = markdown.markdown(content)
@@ -135,6 +145,9 @@ def get_all_parsed_posts(brief=True):
 
         for post_name in post_name_list:
             post = BasicParser.parse(options.posts_dir, post_name)
+            if post['published'] == 'false':
+                continue;
+
             if brief:
                 post["content"] = BasicParser.get_brief_content(post["content"])
             posts.append(post)

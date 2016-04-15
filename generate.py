@@ -87,6 +87,9 @@ def generate_sitemap():
     sitemap_target = open(options.build_dir + os.sep + "sitemap.xml", "wb")
     sitemap_target.write(sitemap)
 
+def copy_robots_txt():
+    shutil.copy(options.global_resource_dir + os.sep + "robots.txt", options.build_dir + os.sep + "robots.txt")
+
 def generate():
     mkdir(options.build_dir)
     generate_index()
@@ -94,6 +97,7 @@ def generate():
     generate_posts()
     generate_about()
     generate_sitemap()
+    copy_robots_txt()
 
 if __name__ == '__main__':
     root_path = os.path.dirname(os.path.abspath(__file__))

@@ -90,6 +90,12 @@ def generate_sitemap():
 def copy_robots_txt():
     shutil.copy(options.global_resource_dir + os.sep + "robots.txt", options.build_dir + os.sep + "robots.txt")
 
+def copy_site_verification_files():
+    directory = options.global_resource_dir + os.sep + "site_verification_files"
+    for file_name in os.listdir(directory):
+        full_path = directory + os.sep + file_name
+        shutil.copy(full_path, options.build_dir)
+
 def generate():
     mkdir(options.build_dir)
     generate_index()
@@ -98,6 +104,7 @@ def generate():
     generate_about()
     generate_sitemap()
     copy_robots_txt()
+    copy_site_verification_files()
 
 if __name__ == '__main__':
     root_path = os.path.dirname(os.path.abspath(__file__))

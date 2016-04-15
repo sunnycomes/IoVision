@@ -1,8 +1,10 @@
 ---
 layout: page
-title: "about"
+title: About Sunnycomes
+keywords: About,Sunnycomes,IoVision
+description: This is Sunnycomes's writting platform named IoVision
 date: 2013-12-31 19:41
-comments: true
+comment_allowed: true
 sharing: true
 footer: true
 ---
@@ -14,22 +16,21 @@ footer: true
 1. **M.Eng., Information Security, BUPT, 2016**
 1. **B.S., Software Engineering, HZNU, 2013**
 
-####Photo  
+####Photo
 **Big photo** *[here](https://dn-iovi.qbox.me/me.png)*
 
 ####Wallets
-**Bitcoin Wallet**：<a href="https://blockchain.info/address/17L2bPF8WRhu81UBZnBsQfiopdnDFKFv5W" target="_blank">17L2bPF8WRhu81UBZnBsQfiopdnDFKFv5W</a>  
-**Doge Wallet**：<a href="https://dogechain.info/address/DNFR3FWD82DP51LWVF5NzWaKRZSAQ317iy" target="_blank">DNFR3FWD82DP51LWVF5NzWaKRZSAQ317iy</a>  
+**Bitcoin Wallet**：<a href="https://blockchain.info/address/17L2bPF8WRhu81UBZnBsQfiopdnDFKFv5W" target="_blank">17L2bPF8WRhu81UBZnBsQfiopdnDFKFv5W</a>
+**Doge Wallet**：<a href="https://dogechain.info/address/DNFR3FWD82DP51LWVF5NzWaKRZSAQ317iy" target="_blank">DNFR3FWD82DP51LWVF5NzWaKRZSAQ317iy</a>
 
 ##Projects
-**IoVision**: *My present blogging system.*  
-**AutoBit**: *An auto trading robot for Bitcoin and Litecoin.*  
-**DNMiner**: *An program used to find out some expired but valuable domain names from a long list.*  
+**IoVision**: *My present blogging system.*
+**AutoBit**: *An auto trading robot for Bitcoin and Litecoin.*
+**DNMiner**: *An program used to find out some expired but valuable domain names from a long list.*
 
 ##Links
-Profiles on ***[about.me](http://www.about.me/sunnycomes)***  
+Profiles on ***[about.me](http://www.about.me/sunnycomes)***
 Projects on ***[github.com](http://www.github.com/sunnycomes)***
-
 
 **(End)**
 

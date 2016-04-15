@@ -77,7 +77,7 @@ def generate_sitemap():
         new_post_name = post_name.replace("markdown", "html")
 
         url_entry['post_url'] = options.url + "/post/" + new_post_name
-        url_entry['lastmod'] = time.ctime(os.path.getmtime(options.posts_dir + os.sep + post_name))
+        url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(options.posts_dir + os.sep + post_name))))
         url_entry['changefreq'] = 'monthly'
         url_entry['priority'] = '1'
 

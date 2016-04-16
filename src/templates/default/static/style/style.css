@@ -86,6 +86,10 @@ article, #pager_bar {
     	font-weight: 300;
 }
 
+.entry-title .cv {
+        color:blue;
+}
+
 .entry-title a:hover {
 	color:#2122AA;
 }
@@ -216,6 +220,7 @@ p>code {
 
 strong {
 	color: #333;
+        font-size:1.1em;
 }
 
 .go {

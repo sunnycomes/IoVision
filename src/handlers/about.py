@@ -26,4 +26,4 @@ class AboutHandler(RequestHandler):
         template_file_name = "about.html"
         self.render(template_file_name, post = post, params = params, snippets = snippets)
 
-handler = (r"/about", AboutHandler)
+handler = (r"/about/index.html", AboutHandler)

@@ -83,6 +83,21 @@ def generate_sitemap():
 
         urlset.append(url_entry)
 
+    about_url_entry = {}
+    index_url_entry = {}
+    about_url_entry['post_url'] = options.url + "/about/index.html"
+    about_url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(options.about_dir + os.sep + "about.markdown"))))
+    about_url_entry['changefreq'] = 'monthly'
+    about_url_entry['priority'] = '1'
+
+    index_url_entry['post_url'] = options.url + "/index.html"
+    index_url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(options.about_dir + os.sep + "about.markdown"))))
+    index_url_entry['changefreq'] = 'weekly'
+    index_url_entry['priority'] = '1'
+
+    urlset.append(about_url_entry)
+    urlset.append(index_url_entry)
+
     sitemap = TemplateParser.parse(options.current_template_dir, "sitemap.xml", urlset=urlset)
     sitemap_target = open(options.build_dir + os.sep + "sitemap.xml", "wb")
     sitemap_target.write(sitemap)

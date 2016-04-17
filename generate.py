@@ -10,8 +10,8 @@ import os,time
 import shutil
 from tornado.options import options
 
-from src.common import markdown_parser
-from src.common.markdown_parser import BasicParser, get_all_markdown_files
+from src.common import post_parser
+from src.common.post_parser import BasicParser, get_all_markdown_files
 from src.common.settings import get_site_info, get_3rd_party_snippet
 from src.common.template_parser import TemplateParser
 from src.common.utils import init_root_path, load_config
@@ -31,7 +31,7 @@ def rmdir(dest):
     pass
 
 def generate_index():
-    posts = markdown_parser.get_all_parsed_posts()
+    posts = post_parser.get_all_parsed_posts()
     params = get_site_info()
     snippets = get_3rd_party_snippet()
     html = TemplateParser.parse(options.current_template_dir, "index.html", posts=posts, params=params, snippets=snippets)
@@ -47,7 +47,7 @@ def copy_static_files():
 def generate_posts():
     dest = options.build_dir + os.sep + "post"
     mkdir(dest)
-    posts = markdown_parser.get_all_parsed_posts(brief=False)
+    posts = post_parser.get_all_parsed_posts(brief=False)
     params = get_site_info()
     snippets = get_3rd_party_snippet()
     for post in posts:
@@ -56,10 +56,10 @@ def generate_posts():
         post_file.write(html)
 
 def copy_pdf_posts():
-    directory = options.global_resource_dir + os.sep + "pdfs"
-    for file_name in os.listdir(directory):
-        full_path = directory + os.sep + file_name
-        shutil.copy(full_path, options.build_dir + "/post/")
+    for file_name in os.listdir(options.posts_dir):
+        if file_name and file_name.endswith(".pdf"):
+            full_path = options.posts_dir + os.sep + file_name
+            shutil.copy(full_path, options.build_dir + "/post/")
 
 def generate_about():
     dest = options.build_dir + os.sep + "about"
@@ -72,8 +72,7 @@ def generate_about():
     about_file.write(html)
 
 def generate_sitemap():
-    items = os.listdir(options.posts_dir)
-    post_name_list = get_all_markdown_files(items)
+    post_name_list = os.listdir(options.posts_dir)
     post_name_list.sort(reverse=True)
 
     urlset = []
@@ -85,18 +84,6 @@ def generate_sitemap():
         url_entry['post_url'] = options.url + "/post/" + new_post_name
         url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(full_path))))
         url_entry['changefreq'] = 'monthly'
-        url_entry['priority'] = '1'
-
-        urlset.append(url_entry)
-
-    directory = options.global_resource_dir + os.sep + "pdfs"
-    for pdf_name in os.listdir(directory):
-        url_entry = {}
-        full_path = directory + os.sep + pdf_name
-
-        url_entry['post_url'] = options.url + "/post/" + pdf_name
-        url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(full_path))))
-        url_entry['changefreq'] = 'weekly'
         url_entry['priority'] = '1'
 
         urlset.append(url_entry)

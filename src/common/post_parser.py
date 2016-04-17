@@ -98,7 +98,7 @@ class BasicParser:
         return "true"
 
     @staticmethod
-    def parse(post_dir, post_name):
+    def parse_markdown_post(post_dir, post_name):
         post_path = post_dir + os.sep + post_name
         lines = BasicParser._read_post(post_path)
 
@@ -116,6 +116,22 @@ class BasicParser:
         sections["content"] = markdown.markdown(content)
 
         return sections
+
+    @staticmethod
+    def parse_pdf_post(post_dir, post_name):
+        post_path = post_dir + os.sep + post_name
+        pdf_file = open(post_path, 'rb')
+
+        return pdf_file.read()
+
+    @staticmethod
+    def parse(post_dir, post_name):
+        if post_name and post_name.endswith('.markdown'):
+            return BasicParser.parse_markdown_post(post_dir, post_name)
+        elif post_name and post_name.endswith('.pdf'):
+            return BasicParser.parse_pdf_post(post_dir, post_name)
+
+        return None
 
     @staticmethod
     def get_brief_content(content):

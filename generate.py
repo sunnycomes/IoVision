@@ -55,6 +55,12 @@ def generate_posts():
         post_file = open(dest + os.sep + post["post_name"] + ".html", "wb")
         post_file.write(html)
 
+def copy_pdf_posts():
+    directory = options.global_resource_dir + os.sep + "pdfs"
+    for file_name in os.listdir(directory):
+        full_path = directory + os.sep + file_name
+        shutil.copy(full_path, options.build_dir + "/post/")
+
 def generate_about():
     dest = options.build_dir + os.sep + "about"
     mkdir(dest)
@@ -74,10 +80,23 @@ def generate_sitemap():
     for post_name in post_name_list:
         url_entry = {}
         new_post_name = post_name.replace("markdown", "html")
+        full_path = options.posts_dir + os.sep + post_name
 
         url_entry['post_url'] = options.url + "/post/" + new_post_name
-        url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(options.posts_dir + os.sep + post_name))))
+        url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(full_path))))
         url_entry['changefreq'] = 'monthly'
+        url_entry['priority'] = '1'
+
+        urlset.append(url_entry)
+
+    directory = options.global_resource_dir + os.sep + "pdfs"
+    for pdf_name in os.listdir(directory):
+        url_entry = {}
+        full_path = directory + os.sep + pdf_name
+
+        url_entry['post_url'] = options.url + "/post/" + pdf_name
+        url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(full_path))))
+        url_entry['changefreq'] = 'weekly'
         url_entry['priority'] = '1'
 
         urlset.append(url_entry)
@@ -115,6 +134,7 @@ def generate():
     generate_index()
     copy_static_files()
     generate_posts()
+    copy_pdf_posts()
     generate_about()
     generate_sitemap()
     copy_robots_txt()

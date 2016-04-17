@@ -65,4 +65,5 @@ target/
 .DS_Store
 ._*
 
+src/posts/
 src/posts/.gitignore

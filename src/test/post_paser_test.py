@@ -2,8 +2,7 @@
 
 import os
 
-from src.common.markdown_parser import BasicParser
-
+from src.common.post_parser import BasicParser
 
 if __name__ == "__main__":
     path = os.path.dirname(os.path.abspath(__file__))

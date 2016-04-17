@@ -7,7 +7,7 @@ Created on Oct 4, 2014
 from tornado.web import RequestHandler
 
 from src.common.post_parser import get_all_parsed_posts
-from src.common.settings import get_site_info, get_3rd_party_snippet
+from src.common.settings import get_site_info, get_3rd_party_snippets
 
 class IndexHandler(RequestHandler):
     '''
@@ -19,7 +19,7 @@ class IndexHandler(RequestHandler):
 
         params = get_site_info()
 
-        snippets = get_3rd_party_snippet()
+        snippets = get_3rd_party_snippets()
 
         template_file_name = "index.html"
 

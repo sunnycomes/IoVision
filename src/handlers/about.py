@@ -8,7 +8,7 @@ from tornado.options import options
 from tornado.web import RequestHandler
 
 from src.common.post_parser import BasicParser
-from src.common.settings import get_site_info, get_3rd_party_snippet
+from src.common.settings import get_site_info, get_3rd_party_snippets
 
 class AboutHandler(RequestHandler):
     '''
@@ -21,7 +21,7 @@ class AboutHandler(RequestHandler):
 
         params = get_site_info()
 
-        snippets = get_3rd_party_snippet()
+        snippets = get_3rd_party_snippets()
 
         template_file_name = "about.html"
         self.render(template_file_name, post = post, params = params, snippets = snippets)

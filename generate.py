@@ -12,7 +12,7 @@ from tornado.options import options
 
 from src.common import post_parser
 from src.common.post_parser import BasicParser, get_all_markdown_files
-from src.common.settings import get_site_info, get_3rd_party_snippet
+from src.common.settings import get_site_info, get_3rd_party_snippets
 from src.common.template_parser import TemplateParser
 from src.common.utils import init_root_path, load_config
 
@@ -33,7 +33,7 @@ def rmdir(dest):
 def generate_index():
     posts = post_parser.get_all_parsed_posts()
     params = get_site_info()
-    snippets = get_3rd_party_snippet()
+    snippets = get_3rd_party_snippets()
     html = TemplateParser.parse(options.current_template_dir, "index.html", posts=posts, params=params, snippets=snippets)
 
     index_file = open(options.build_dir + os.sep + "/index.html", "wb")
@@ -49,7 +49,7 @@ def generate_posts():
     mkdir(dest)
     posts = post_parser.get_all_parsed_posts(brief=False)
     params = get_site_info()
-    snippets = get_3rd_party_snippet()
+    snippets = get_3rd_party_snippets()
     for post in posts:
         html = TemplateParser.parse(options.current_template_dir, "post.html", post=post, params=params, snippets = snippets)
         post_file = open(dest + os.sep + post["post_name"] + ".html", "wb")
@@ -66,7 +66,7 @@ def generate_about():
     mkdir(dest)
     post = BasicParser.parse(options.about_dir, "about.markdown")
     params = get_site_info()
-    snippets = get_3rd_party_snippet()
+    snippets = get_3rd_party_snippets()
     html = TemplateParser.parse(options.current_template_dir, "about.html", post=post, params=params, snippets=snippets)
     about_file = open(dest + os.sep + "index.html", "wb")
     about_file.write(html)

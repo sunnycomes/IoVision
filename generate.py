@@ -70,7 +70,7 @@ def copy_pdf_about():
 def generate_about():
     dest = options.build_dir + os.sep + "about"
     mkdir(dest)
-    post = BasicParser.parse(options.about_dir, "about.markdown")
+    post = BasicParser.parse(options.about_dir, "index.markdown")
     params = get_site_info()
     snippets = get_3rd_party_snippets()
     html = TemplateParser.parse(options.current_template_dir, "about.html", post=post, params=params, snippets=snippets)
@@ -94,19 +94,26 @@ def generate_sitemap():
 
         urlset.append(url_entry)
 
-    about_url_entry = {}
-    index_url_entry = {}
-    about_url_entry['post_url'] = options.url + "/about/index.html"
-    about_url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(options.about_dir + os.sep + "about.markdown"))))
-    about_url_entry['changefreq'] = 'monthly'
-    about_url_entry['priority'] = '1'
+    item_list = os.listdir(options.about_dir)
+    item_list.sort(reverse=True)
+    for item_name in item_list:
+        url_entry = {}
+        new_item_name = item_name.replace('markdown', 'html')
+        full_path = options.about_dir + os.sep + item_name
 
+        url_entry['post_url'] = options.url + "/about/" + new_item_name
+        url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(full_path))))
+        url_entry['changefreq'] = 'weekly'
+        url_entry['priority'] = '1'
+
+        urlset.append(url_entry)
+
+    index_url_entry = {}
     index_url_entry['post_url'] = options.url + "/index.html"
-    index_url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(options.about_dir + os.sep + "about.markdown"))))
+    index_url_entry['lastmod'] = time.strftime('%Y-%m-%dT%H:%M:%S+08:00', time.localtime(int(os.path.getmtime(options.about_dir + os.sep + "index.markdown"))))
     index_url_entry['changefreq'] = 'weekly'
     index_url_entry['priority'] = '1'
 
-    urlset.append(about_url_entry)
     urlset.append(index_url_entry)
 
     sitemap = TemplateParser.parse(options.current_template_dir, "sitemap.xml", urlset=urlset)

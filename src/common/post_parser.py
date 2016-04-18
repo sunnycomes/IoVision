@@ -23,54 +23,63 @@ class BasicParser:
     @staticmethod
     def _find_title(lines):
         for line in lines:
-            if line.find("title: ") > -1:
-                line = line.strip()
-                return line[7:len(line)]
+            if line.find("title:") > -1:
+                line = line[6:len(line)]
+                return line.strip()
 
         return "No title"
 
     @staticmethod
     def _find_keywords(lines):
         for line in lines:
-            if line.find("keywords: ") > -1:
-                line = line.strip()
-                return line[10:len(line)]
+            if line.find("keywords:") > -1:
+                line = line[9:len(line)]
+                return line.strip()
 
         return "No keywords"
 
     @staticmethod
     def _find_description(lines):
         for line in lines:
-            if line.find("description: ") > -1:
-                line = line.strip()
-                return line[13:len(line)]
+            if line.find("description:") > -1:
+                line = line[12:len(line)]
+                return line.strip()
 
         return "No description"
 
     @staticmethod
     def _find_categories(lines):
         for line in lines:
-            if line.find("categories: ") > -1:
-                line = line.strip()
-                return line[12:len(line)]
+            if line.find("categories:") > -1:
+                line = line[11:len(line)]
+                return line.strip()
 
         return "No categories"
 
     @staticmethod
     def _find_date(lines):
         for line in lines:
-            if line.find("date: ") > -1:
-                line = line.strip()
-                return line[6:len(line)]
+            if line.find("date:") > -1:
+                line = line[5:len(line)]
+                return line.strip()
 
         return "No date"
 
     @staticmethod
     def _find_comment_allowed(lines):
         for line in lines:
-            if line.find("comment_allowed: ") > -1:
-                line = line.strip()
-                return line[17:len(line)]
+            if line.find("comment_allowed:") > -1:
+                line = line[16:len(line)]
+                return line.strip()
+
+        return "true"
+
+    @staticmethod
+    def _find_published(lines):
+        for line in lines:
+            if line.find("published:") > -1:
+                line = line[10:len(line)]
+                return line.strip()
 
         return "true"
 
@@ -87,15 +96,6 @@ class BasicParser:
             content += line
 
         return content
-
-    @staticmethod
-    def _find_published(lines):
-        for line in lines:
-            if line.find("published: ") > -1:
-                line = line.strip()
-                return line[11:len(line)]
-
-        return "true"
 
     @staticmethod
     def parse_markdown_post(post_dir, post_name):

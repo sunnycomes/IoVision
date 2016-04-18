@@ -107,11 +107,8 @@ def generate_sitemap():
     sitemap_target = open(options.build_dir + os.sep + "sitemap.xml", "wb")
     sitemap_target.write(sitemap)
 
-def copy_robots_txt():
-    shutil.copy(options.global_resource_dir + os.sep + "robots.txt", options.build_dir + os.sep + "robots.txt")
-
-def copy_site_verification_files():
-    directory = options.global_resource_dir + os.sep + "site_verification_files"
+def copy_files_under_web_root():
+    directory = options.content_dir + os.sep + "under-web-root"
     for file_name in os.listdir(directory):
         full_path = directory + os.sep + file_name
         shutil.copy(full_path, options.build_dir)
@@ -124,8 +121,7 @@ def generate():
     copy_pdf_posts()
     generate_about()
     generate_sitemap()
-    copy_robots_txt()
-    copy_site_verification_files()
+    copy_files_under_web_root()
 
 if __name__ == '__main__':
     root_path = os.path.dirname(os.path.abspath(__file__))

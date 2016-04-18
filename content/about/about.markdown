@@ -22,7 +22,7 @@ I'm Caijun Sun and at present a PhD candidate in State Key Laboratory of Network
 
 ##Projects
 **AutoBit**: *An auto trading robot for Bitcoin and Litecoin, earnings rate is 200% from January to August in 2015.*<br/>
-**PrimeDFS**: *Another Distributed File System(DFS) based on FastDFS, incoroporates techniques of P2P and Merkle Tree, also solves problems of Single Point Failure, Duplication, etc.*<br/>
+**PrimeDFS**: *Another Distributed File System(DFS) based on FastDFS, incorporates techniques of P2P and Merkle Tree, also solves problems of Single Point Failure, Duplication, etc.*<br/>
 **Oraclex**: *An category classifer for mobile apps relied on LDA and PLSA, ideas from <a href="http://staff.ustc.edu.cn/~cheneh/paper_pdf/2013/HengshuZhu-App.pdf">this paper</a>. However, the performance is not as good as the authors claimed.*<br/>
 **IoVision**: *My present blogging system, for those who are in favor of markdown and Octopress.*<br/>
 **DNMiner**: *An program used to find out some valuable domain names from millions of expired ones.*<br/>

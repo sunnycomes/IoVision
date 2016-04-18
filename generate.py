@@ -61,6 +61,12 @@ def copy_pdf_posts():
             full_path = options.posts_dir + os.sep + file_name
             shutil.copy(full_path, options.build_dir + "/post/")
 
+def copy_pdf_about():
+    for file_name in os.listdir(options.about_dir):
+        if file_name and file_name.endswith(".pdf"):
+            full_path = options.about_dir + os.sep + file_name
+            shutil.copy(full_path, options.build_dir + "/about/")
+
 def generate_about():
     dest = options.build_dir + os.sep + "about"
     mkdir(dest)
@@ -119,6 +125,7 @@ def generate():
     copy_static_files()
     generate_posts()
     copy_pdf_posts()
+    copy_pdf_about()
     generate_about()
     generate_sitemap()
     copy_files_under_web_root()

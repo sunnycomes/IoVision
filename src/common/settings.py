@@ -19,10 +19,10 @@ def get_site_info():
 
     return params
 
-def get_3rd_party_snippet():
+def get_3rd_party_snippets():
     snippets = {}
 
-    dest_dir = options.global_resource_dir + os.sep + "snippet"
+    dest_dir = options.global_resource_dir + os.sep + "snippets"
     disqus_file = file(dest_dir + os.sep + "disqus.snippet")
     disqus_snippet = disqus_file.read()
     snippets["disqus_snippet"] = disqus_snippet.replace("param_disqus_shortname", options.disqus_shortname)

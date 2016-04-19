@@ -132,8 +132,8 @@ def generate():
     copy_static_files()
     generate_posts()
     copy_pdf_posts()
-    copy_pdf_about()
     generate_about()
+    copy_pdf_about()
     generate_sitemap()
     copy_files_under_web_root()
 

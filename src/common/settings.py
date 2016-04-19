@@ -35,7 +35,7 @@ def get_3rd_party_snippets():
     github_fork_snippet = github_fork_file.read()
     snippets["github_fork_snippet"] = github_fork_snippet.replace("param_github_fork_link", options.github_fork_link)
 
-    baidu_js_push_file = file(dest_dir + os.sep + "baidu_js_push.snippet")
-    snippets["baidu_js_push_snippet"] = baidu_js_push_file.read()
+    js_push_file = file(dest_dir + os.sep + "js_push.snippet")
+    snippets["js_push_snippet"] = js_push_file.read()
 
     return snippets

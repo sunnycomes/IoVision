@@ -27,9 +27,10 @@ def get_3rd_party_snippets():
     disqus_snippet = disqus_file.read()
     snippets["disqus_snippet"] = disqus_snippet.replace("param_disqus_shortname", options.disqus_shortname)
 
-    google_analytics_file = file(dest_dir + os.sep + "google_analytics.snippet")
-    google_analytics_snippet = google_analytics_file.read()
-    snippets["google_analytics_snippet"] = google_analytics_snippet.replace("param_google_analytics_id", options.google_analytics_id)
+    site_analytics_file = file(dest_dir + os.sep + "site_analytics.snippet")
+    site_analytics_snippet = site_analytics_file.read()
+    site_analytics_snippet = site_analytics_snippet.replace("param_google_analytics_id", options.google_analytics_id)
+    snippets["site_analytics_snippet"] = site_analytics_snippet.replace("param_baidu_analytics_id", options.baidu_analytics_id)
 
     github_fork_file = file(dest_dir + os.sep + "github_fork.snippet")
     github_fork_snippet = github_fork_file.read()

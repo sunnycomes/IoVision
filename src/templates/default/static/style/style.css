@@ -59,6 +59,7 @@ article, #pager_bar {
 
 #pager_bar {
 	height: 30px;
+        display: none;
 }
 
 .article_wrapper {

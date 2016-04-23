@@ -7,6 +7,21 @@ import ConfigParser
 import os, sys
 from tornado.options import define, options
 
+def mkdir(dest):
+    if not os.path.exists(dest):
+        os.mkdir(dest)
+
+def rmdir(dest):
+    if os.path.exists(dest):
+        shutil.rmtree(dest)
+    pass
+
+def copy_in_directory(src, dst):
+    if not os.path.exists(dst):
+        mkdir(dst)
+
+    os.system("cp -r " + src + "/* " + dst + "/")
+
 def get_config_file(file_path):
     config = ConfigParser.RawConfigParser()
     config.read(file_path)

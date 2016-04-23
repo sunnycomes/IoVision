@@ -14,21 +14,10 @@ from src.common import post_parser
 from src.common.post_parser import BasicParser, get_all_markdown_files
 from src.common.settings import get_site_info, get_3rd_party_snippets
 from src.common.template_parser import TemplateParser
-from src.common.utils import init_root_path, load_config
+from src.common.utils import init_root_path, load_config, mkdir, copy_in_directory
 
 def list_template_files():
     return os.listdir(options.current_template_dir)
-
-def mkdir(dirx):
-    if os.path.exists(dirx):
-        return
-
-    os.mkdir(dirx)
-
-def rmdir(dest):
-    if os.path.exists(dest):
-        shutil.rmtree(dest)
-    pass
 
 def generate_index():
     posts = post_parser.get_all_parsed_posts()
@@ -41,8 +30,7 @@ def generate_index():
 
 def copy_static_files():
     dest = options.build_dir + os.sep + "static"
-    rmdir(dest)
-    shutil.copytree(options.static_resource_dir, dest)
+    copy_in_directory(options.static_resource_dir, dest)
 
 def generate_posts():
     dest = options.build_dir + os.sep + "post"
@@ -122,9 +110,7 @@ def generate_sitemap():
 
 def copy_files_under_web_root():
     directory = options.content_dir + os.sep + "under-web-root"
-    for file_name in os.listdir(directory):
-        full_path = directory + os.sep + file_name
-        shutil.copy(full_path, options.build_dir)
+    copy_in_directory(directory, options.build_dir)
 
 def generate():
     mkdir(options.build_dir)

@@ -20,7 +20,7 @@ def copy_in_directory(src, dst):
     if not os.path.exists(dst):
         mkdir(dst)
 
-    os.system("cp -r " + src + "/* " + dst + "/")
+    os.system("rsync -av --exclude='.*' " + src + " " +  dst)
 
 def get_config_file(file_path):
     config = ConfigParser.RawConfigParser()
